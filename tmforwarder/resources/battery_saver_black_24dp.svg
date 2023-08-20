@@ -10,7 +10,7 @@
 
         @media (prefers-color-scheme: dark) {
             .theme-icon {
-            filter: grayscale(100%) brightness(0) invert(1);
+            filter: grayscale(100%) brightness(0) invert(0);
             }
         }
       </style>
