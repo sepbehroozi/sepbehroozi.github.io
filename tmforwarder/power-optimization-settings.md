@@ -1,0 +1,6 @@
+# Switching off Power Optimization Settings for TM Forwarder
+When you install TM Forwarder on your phone, Android switches on some power optimization settings for the app by default. These settings might impact the TM Forwarder app functionality as the app needs to be active on the background and the Android OS does not like that!
+
+To switch off the Android Power Optimization Settings for the TM Forwarder app, open the Power Optimization Settings on you phone, open the <img alt="TM Forwarder App Icon" src="./resources/tm-forwarder-icon.png" width="20" height="20" style="vertical-align: middle;" /> TM Forwarder app, Click on the upper left burger menu icon to open the application side menu, click on the <img alt="Settings Icon" src="./resources/settings_black_24dp.svg" width="20" height="20" style="vertical-align: middle;"/> Settings menu item, choose <img alt="Battery Icon" src="./resources/battery_saver_black_24dp.svg" width="20" height="20" style="vertical-align: middle;"/> Power Saving Information settings, and click on the Open Battery Optimization Settings button. It will take you to the Android's Battery Optimization Settings like below:
+
+<img alt="Battery Optimization Settings Screenshot" src="./resources/phone-power-opt-settings-screenshot.jpg" width=400/>
