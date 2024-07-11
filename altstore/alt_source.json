@@ -1,0 +1,46 @@
+{
+    "name": "Sep Behroozi Source",
+    "subtitle": "All the apps that I don't want to pay apple for",
+    "description": "Welcome to my source! Here you'll find all of my apps.",
+    "iconURL": "https://play-lh.googleusercontent.com/K4IS6WvDaPdYbYFzhFnc1sqMa5qUi6mFhIPru3ajU0Qi9L_Wqu7mEpQBtv4-EShh91rV=s94-rw",
+    "headerURL": "https://play-lh.googleusercontent.com/okn1YrCZ3ziQWFreIdg4AJC4HYsitjhsIFbeLDj_clenZKq0n0ZchEcVpZTK9dU3WQ=w3840-h2160-rw",
+    "website": "https://sepbehroozi.github.io",
+    "tintColor": "#094D51",
+    "featuredApps":
+    [
+        "org.treffen.Treffen"
+    ],
+    "apps":
+    [
+        {
+            "name": "Treffen",
+            "bundleIdentifier": "org.treffen.Treffen",
+            "developerName": "Sep Behroozi",
+            "subtitle": "Plan easier together",
+            "localizedDescription": "This is an awesome app only available on AltStore.",
+            "iconURL": "https://sepbehroozi.github.io/altstore/Treffen/icons/treffen-icon.png",
+            "tintColor": "#5CA399",
+            "category": "social",
+            "versions":
+            [
+                {
+                    "version": "0.0.1",
+                    "date": "2024-07-11T18:00:00+02:00",
+                    "size": 43515904,
+                    "downloadURL": "https://sepbehroozi.github.io/altstore/Treffen/ipa/0.0.1.ipa",
+                    "localizedDescription": "Initial Release",
+                    "minOSVersion": "17.0"
+                }
+            ],
+            "appPermissions":
+            {
+                "entitlements": [],
+                "privacy":
+                {
+                    "NSLocationWhenInUseUsageDescription": "Treffen needs to access your current location in order to function properly"
+                }
+            }
+        }
+    ],
+    "news": []
+}
