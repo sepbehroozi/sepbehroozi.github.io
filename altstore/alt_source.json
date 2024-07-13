@@ -26,21 +26,20 @@
             [
                 {
                     "version": "0.0.1",
-                    "date": "2024-07-11T18:00:00+02:00",
-                    "size": 43515904,
+                    "date": "2024-07-11",
+                    "localizedDescription": "Initial Release!",
                     "downloadURL": "https://sepbehroozi.github.io/altstore/Treffen/ipa/0.0.1.ipa",
-                    "localizedDescription": "Initial Release",
-                    "minOSVersion": "17.0"
+                    "size": 43515904
                 }
             ],
-            "appPermissions":
-            {
-                "entitlements": [],
-                "privacy":
+            "permissions":
+            [
                 {
-                    "NSLocationWhenInUseUsageDescription": "Treffen needs to access your current location in order to function properly"
+                    "type": "location",
+                    "usageDescription": "Treffen needs to access your current location in order to function properly"
                 }
-            }
+            ],
+            "beta": false
         }
     ],
     "news": []
