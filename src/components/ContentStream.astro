@@ -1,0 +1,45 @@
+---
+import { resume } from '../data/resume';
+import ExperienceCard from './ExperienceCard.astro';
+import EducationCard from './EducationCard.astro';
+const { about, experience, education } = resume;
+---
+<div class="stream">
+  {about && (
+    <section class="section" data-anim="reveal">
+      <div class="label-eyebrow">About</div>
+      <p class="about">{about}</p>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="label-eyebrow" data-anim="reveal">Experience</div>
+    <div class="stack">
+      {experience.map((item) => <ExperienceCard item={item} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="label-eyebrow" data-anim="reveal">Education</div>
+    <div class="stack">
+      {education.map((item) => <EducationCard item={item} />)}
+    </div>
+  </section>
+</div>
+
+<style>
+  .stream {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    min-width: 0;
+  }
+  .section { display: flex; flex-direction: column; gap: 0.9rem; }
+  .stack { display: flex; flex-direction: column; gap: 0.8rem; }
+  .about {
+    color: var(--text-secondary);
+    line-height: 1.65;
+    font-size: 1rem;
+    margin: 0;
+  }
+</style>
