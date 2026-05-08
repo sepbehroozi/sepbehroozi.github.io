@@ -7,7 +7,7 @@ import { resume } from '../data/resume';
 const title = `${resume.identity.name} — ${resume.identity.role}`;
 const description = resume.identity.tagline;
 ---
-<Layout title={title} description={description}>
+<Layout title={title} description={description} loadAnimations>
   <main class="page">
     <div class="grid">
       <Sidebar />
@@ -15,6 +15,10 @@ const description = resume.identity.tagline;
     </div>
   </main>
 </Layout>
+
+<script>
+  import '../scripts/animations.client.ts';
+</script>
 
 <style>
   .page {

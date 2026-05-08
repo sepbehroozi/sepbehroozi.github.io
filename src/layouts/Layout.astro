@@ -6,11 +6,13 @@ interface Props {
   title?: string;
   description?: string;
   ogType?: 'website' | 'article';
+  loadAnimations?: boolean;
 }
 const {
   title = 'Sep Behroozi',
   description = 'Software engineer building mobile apps and developer tooling.',
   ogType = 'website',
+  loadAnimations = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
