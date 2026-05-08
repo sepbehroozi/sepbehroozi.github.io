@@ -1,0 +1,57 @@
+---
+// A fixed-position decorative backdrop. Two layers:
+//   1. A radial gradient base
+//   2. Three soft glowing orbs that drift (animated client-side in Task 18)
+---
+<div aria-hidden="true" class="backdrop">
+  <div class="backdrop-gradient"></div>
+  <div class="backdrop-orb backdrop-orb-1" data-orb="1"></div>
+  <div class="backdrop-orb backdrop-orb-2" data-orb="2"></div>
+  <div class="backdrop-orb backdrop-orb-3" data-orb="3"></div>
+</div>
+
+<style>
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .backdrop-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 80% at 0% 0%, var(--bg-radial-from) 0%, var(--bg-base) 60%);
+  }
+  .backdrop-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.55;
+    will-change: transform;
+  }
+  .backdrop-orb-1 {
+    width: 380px;
+    height: 380px;
+    top: -120px;
+    left: -100px;
+    background: radial-gradient(circle, var(--accent-from) 0%, transparent 70%);
+    opacity: 0.35;
+  }
+  .backdrop-orb-2 {
+    width: 460px;
+    height: 460px;
+    bottom: -160px;
+    right: -120px;
+    background: radial-gradient(circle, var(--accent-to) 0%, transparent 70%);
+    opacity: 0.30;
+  }
+  .backdrop-orb-3 {
+    width: 320px;
+    height: 320px;
+    top: 40%;
+    left: 60%;
+    background: radial-gradient(circle, #7c5cff 0%, transparent 70%);
+    opacity: 0.25;
+  }
+</style>

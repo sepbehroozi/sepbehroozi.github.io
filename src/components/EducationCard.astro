@@ -1,0 +1,47 @@
+---
+import type { Education } from '../data/resume';
+import { formatRange } from '../utils/formatRange';
+interface Props { item: Education; }
+const { item } = Astro.props;
+---
+<article class="card" data-anim="reveal">
+  <header class="row">
+    <span class="institution">{item.institution}</span>
+    <span class="dates tabular">{formatRange(item.range)}</span>
+  </header>
+  <p class="degree">{item.degree}</p>
+  {item.notes && <p class="notes">{item.notes}</p>}
+</article>
+
+<style>
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .institution { font-weight: 600; }
+  .dates { color: var(--text-tertiary); font-size: 0.85rem; }
+  .degree {
+    color: var(--text-secondary);
+    margin: 0.4rem 0 0 0;
+    font-size: 0.93rem;
+  }
+  .notes {
+    color: var(--text-tertiary);
+    margin: 0.25rem 0 0 0;
+    font-size: 0.85rem;
+  }
+</style>

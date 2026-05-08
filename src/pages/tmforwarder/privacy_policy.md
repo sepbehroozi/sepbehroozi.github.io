@@ -1,3 +1,9 @@
+---
+layout: ../../layouts/Legal.astro
+title: Privacy Policy — TM Forwarder
+description: Privacy policy for the TM Forwarder mobile application.
+---
+
 **Privacy Policy**
 
 Sep Behroozi built the TM Forwarder app as a Free app. This SERVICE is provided by Sep Behroozi at no cost and is intended for use as is.

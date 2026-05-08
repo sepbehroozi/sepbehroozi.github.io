@@ -1,0 +1,81 @@
+---
+import type { Experience } from '../data/resume';
+import { formatRange } from '../utils/formatRange';
+interface Props { item: Experience; }
+const { item } = Astro.props;
+---
+<article class="card" data-anim="reveal">
+  <header class="row">
+    <div class="title">
+      <span class="company">{item.company}</span>
+      <span class="sep">·</span>
+      <span class="role">{item.role}</span>
+    </div>
+    <span class="dates tabular">{formatRange(item.range)}</span>
+  </header>
+  {item.location && <p class="location">{item.location}</p>}
+  <ul class="bullets">
+    {item.bullets.map((b) => <li>{b}</li>)}
+  </ul>
+  {item.links && (
+    <ul class="links">
+      {item.links.map((l) => (
+        <li><a href={l.href} target="_blank" rel="noopener">{l.label} ↗</a></li>
+      ))}
+    </ul>
+  )}
+</article>
+
+<style>
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .title { font-weight: 600; }
+  .company { color: var(--text-primary); }
+  .sep { color: var(--text-tertiary); margin: 0 0.35em; }
+  .role { color: var(--text-secondary); font-weight: 500; }
+  .dates { color: var(--text-tertiary); font-size: 0.85rem; }
+  .location {
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+    margin: 0.25rem 0 0.5rem 0;
+  }
+  .bullets {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    font-size: 0.93rem;
+  }
+  .bullets li { margin-bottom: 0.3em; }
+  .links {
+    list-style: none;
+    padding: 0;
+    margin: 0.7rem 0 0 0;
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+  .links a {
+    color: var(--accent-from);
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+  .links a:hover { color: var(--accent-to); }
+</style>
