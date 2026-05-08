@@ -1,8 +1,38 @@
 ---
-// Temporary placeholder homepage. Replaced in Task 16 with the real one.
+import Layout from '../layouts/Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import ContentStream from '../components/ContentStream.astro';
+import { resume } from '../data/resume';
+
+const title = `${resume.identity.name} — ${resume.identity.role}`;
+const description = resume.identity.tagline;
 ---
-<!DOCTYPE html>
-<html lang="en">
-  <head><meta charset="utf-8"><title>Sep Behroozi</title></head>
-  <body><h1>placeholder</h1></body>
-</html>
+<Layout title={title} description={description}>
+  <main class="page">
+    <div class="grid">
+      <Sidebar />
+      <ContentStream />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media (min-width: 1024px) {
+    .page { padding: 3rem 2rem 5rem; }
+    .grid {
+      grid-template-columns: 320px 1fr;
+      gap: 3rem;
+    }
+  }
+</style>
