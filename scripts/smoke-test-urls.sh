@@ -21,6 +21,7 @@ checks=(
   "/tmforwarder/terms_of_service.html|text/html"
   "/tmforwarder/power-optimization-settings|text/html"
   "/tmforwarder/power-optimization-settings.html|text/html"
+  "/resume.pdf|application/pdf"
   "/|text/html"
 )
 

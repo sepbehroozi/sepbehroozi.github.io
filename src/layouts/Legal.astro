@@ -30,6 +30,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL('/og-image.png', Astro.site).toString()} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={new URL('/og-image.png', Astro.site).toString()} />
   </head>
   <body class="bg-ink-base text-[color:var(--text-primary)]">
     <div
@@ -43,7 +46,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
         href="/"
         class="label-eyebrow inline-block mb-8 hover:text-[color:var(--text-secondary)] transition-colors"
       >&larr; Sep Behroozi</a>
-      <h1 class="text-3xl md:text-4xl font-semibold mb-2">{title}</h1>
+      <h1 class="text-3xl md:text-4xl font-semibold mb-2">{fullTitle}</h1>
       <article class="legal-prose">
         <slot />
       </article>
