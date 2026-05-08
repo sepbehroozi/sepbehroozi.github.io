@@ -1,12 +1,8 @@
 ---
 import type { Education } from '../data/resume';
+import { formatRange } from '../utils/formatRange';
 interface Props { item: Education; }
 const { item } = Astro.props;
-
-function formatRange(r: { start: string; end: string }) {
-  const end = r.end === 'present' ? 'Present' : r.end;
-  return `${r.start} – ${end}`;
-}
 ---
 <article class="card" data-anim="reveal">
   <header class="row">
