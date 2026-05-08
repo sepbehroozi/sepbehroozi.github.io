@@ -1,0 +1,40 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  size?: number;
+}
+const { src, alt, size = 96 } = Astro.props;
+---
+<div class="avatar" style={`--size:${size}px;`}>
+  <span class="avatar-halo" aria-hidden="true"></span>
+  <img src={src} alt={alt} width={size} height={size} loading="eager" decoding="async" />
+</div>
+
+<style>
+  .avatar {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    flex: 0 0 auto;
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9999px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: var(--surface);
+    position: relative;
+    z-index: 1;
+  }
+  .avatar-halo {
+    position: absolute;
+    inset: -8px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+    filter: blur(14px);
+    opacity: 0.45;
+    z-index: 0;
+  }
+</style>
