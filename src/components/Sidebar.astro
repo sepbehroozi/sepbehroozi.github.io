@@ -10,6 +10,7 @@ const { identity, skillGroups, resumePdf } = resume;
   <Avatar src={identity.photo} alt={`Photo of ${identity.name}`} />
   <div class="identity">
     <h1 class="name gradient-text">{identity.name}</h1>
+    {identity.pronouns && <p class="pronouns">{identity.pronouns}</p>}
     <p class="role">{identity.role}</p>
     <p class="tagline">{identity.tagline}</p>
   </div>
@@ -36,6 +37,12 @@ const { identity, skillGroups, resumePdf } = resume;
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.1;
+    margin: 0;
+  }
+  .pronouns {
+    color: var(--text-tertiary);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
     margin: 0;
   }
   .role {
