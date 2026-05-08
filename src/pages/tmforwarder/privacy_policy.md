@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Legal.astro
+layout: ../../layouts/Legal.astro
 title: Privacy Policy — TM Forwarder
 description: Privacy policy for the TM Forwarder mobile application.
 ---

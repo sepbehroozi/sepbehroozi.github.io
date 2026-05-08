@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Legal.astro
+layout: ../../layouts/Legal.astro
 title: Power Optimization Settings — TM Forwarder
 description: How to disable Android power optimization for TM Forwarder.
 ---

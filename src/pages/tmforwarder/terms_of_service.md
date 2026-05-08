@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Legal.astro
+layout: ../../layouts/Legal.astro
 title: Terms of Service — TM Forwarder
 description: Terms of service for the TM Forwarder mobile application.
 ---

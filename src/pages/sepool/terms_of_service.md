@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Legal.astro
+layout: ../../layouts/Legal.astro
 title: Terms of Service — Sepool
 description: Terms of service for the Sepool mobile application.
 ---
