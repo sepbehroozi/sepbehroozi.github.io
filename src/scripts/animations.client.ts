@@ -59,7 +59,7 @@ export function initAnimations() {
       animate(
         reveals.slice(0, 6),
         { opacity: [0, 1], y: [12, 0] },
-        { duration: 0.55, delay: stagger(0.06, { start: 0.1 }), ease: [0.16, 1, 0.3, 1] },
+        { duration: 0.55, delay: stagger(0.06, { startDelay: 0.1 }), ease: [0.16, 1, 0.3, 1] },
       );
       // Anything past the first 6 (off-screen on load) gets revealed by inView
       reveals.slice(6).forEach((el) => {
@@ -78,8 +78,8 @@ export function initAnimations() {
       const duration = 18 + i * 4;
       animate(
         orb,
-        { transform: [`translate(0px, 0px)`, `translate(${amplitude}px, ${-amplitude}px)`, `translate(0px, 0px)`] },
-        { duration, repeat: Infinity, ease: 'ease-in-out' },
+        { x: [0, amplitude, 0], y: [0, -amplitude, 0] },
+        { duration, repeat: Infinity, ease: 'easeInOut' },
       );
     });
 

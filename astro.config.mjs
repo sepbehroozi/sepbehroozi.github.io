@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://sepbehroozi.github.io',
@@ -9,9 +9,7 @@ export default defineConfig({
     // directory-index pages, so existing /sepool/terms_of_service URLs keep working.
     format: 'file',
   },
-  integrations: [
-    tailwind({
-      applyBaseStyles: false, // we register Tailwind base in src/styles/global.css ourselves
-    }),
-  ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
