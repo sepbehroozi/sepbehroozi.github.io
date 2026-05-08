@@ -1,3 +1,9 @@
+---
+layout: ../../../layouts/Legal.astro
+title: Power Optimization Settings — TM Forwarder
+description: How to disable Android power optimization for TM Forwarder.
+---
+
 # Switching off Power Optimization Settings for <img alt="TM Forwarder App Icon" src="./resources/tm-forwarder-icon.png" width="40" height="40" style="vertical-align: middle;" /> TM Forwarder
 When you install TM Forwarder on your phone, Android switches on some power optimization settings for the app by default. These settings might impact the TM Forwarder app functionality as the app needs to be active on the background and the Android OS does not like that!
 

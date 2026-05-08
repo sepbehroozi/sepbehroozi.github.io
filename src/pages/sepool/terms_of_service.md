@@ -1,3 +1,9 @@
+---
+layout: ../../../layouts/Legal.astro
+title: Terms of Service — Sepool
+description: Terms of service for the Sepool mobile application.
+---
+
 **Terms & Conditions**  
 
 These terms and conditions apply to the Sepool app (hereby referred to as "Application") for mobile devices that was created by Sep Behroozi (hereby referred to as "Service Provider") as a Free service.
