@@ -61,7 +61,7 @@ export const resume: Resume = {
     photo: '/photo.jpg',
     contact: [
       { kind: 'github', href: 'https://github.com/sepbehroozi', label: 'GitHub' },
-      { kind: 'linkedin', href: 'https://www.linkedin.com/in/sepbehroozi/', label: 'LinkedIn' },
+      { kind: 'linkedin', href: 'https://www.linkedin.com/in/sepehr-behroozi/', label: 'LinkedIn' },
     ],
   },
   about:
