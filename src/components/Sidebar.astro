@@ -1,0 +1,61 @@
+---
+import { resume } from '../data/resume';
+import Avatar from './Avatar.astro';
+import ContactLinks from './ContactLinks.astro';
+import DownloadCV from './DownloadCV.astro';
+import SkillGroup from './SkillGroup.astro';
+const { identity, skillGroups, resumePdf } = resume;
+---
+<aside class="sidebar" data-anim="sidebar">
+  <Avatar src={identity.photo} alt={`Photo of ${identity.name}`} />
+  <div class="identity">
+    <h1 class="name gradient-text">{identity.name}</h1>
+    <p class="role">{identity.role}</p>
+    <p class="tagline">{identity.tagline}</p>
+  </div>
+  <DownloadCV href={resumePdf} />
+  <ContactLinks links={identity.contact} />
+  <div class="skills">
+    {skillGroups.map((g) => <SkillGroup group={g} />)}
+  </div>
+</aside>
+
+<style>
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+  }
+  .identity { display: flex; flex-direction: column; gap: 0.35rem; }
+  .name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+  }
+  .role {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  .tagline {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .skills { display: flex; flex-direction: column; gap: 1rem; }
+
+  @media (min-width: 1024px) {
+    .sidebar {
+      position: sticky;
+      top: 2rem;
+    }
+    .name { font-size: 1.8rem; }
+  }
+</style>
