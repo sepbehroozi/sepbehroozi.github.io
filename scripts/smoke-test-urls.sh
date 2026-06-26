@@ -11,6 +11,7 @@ fail=0
 # path|expected_content_type_substring
 checks=(
   "/altstore/alt_source.json|application/json"
+  "/app-ads.txt|text/plain"
   "/4barg|text/html"
   "/4barg.html|text/html"
   "/4barg/privacy_policy|text/html"
