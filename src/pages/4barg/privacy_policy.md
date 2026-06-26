@@ -1,3 +1,9 @@
+---
+layout: ../../layouts/Legal.astro
+title: Privacy Policy — 4Barg
+description: Privacy policy for the 4Barg mobile application.
+---
+
 **Privacy Policy**
 
 This privacy policy applies to the 4Barg app for mobile devices, together with any related services operated by Sep Behroozi (collectively, the "Application"). Sep Behroozi is hereby referred to as the "Service Provider".

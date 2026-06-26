@@ -11,6 +11,12 @@ fail=0
 # path|expected_content_type_substring
 checks=(
   "/altstore/alt_source.json|application/json"
+  "/4barg|text/html"
+  "/4barg.html|text/html"
+  "/4barg/privacy_policy|text/html"
+  "/4barg/privacy_policy.html|text/html"
+  "/4barg/terms_of_service|text/html"
+  "/4barg/terms_of_service.html|text/html"
   "/sepool/privacy_policy|text/html"
   "/sepool/privacy_policy.html|text/html"
   "/sepool/terms_of_service|text/html"
@@ -49,8 +55,8 @@ done
 # Verify Treffen IPA presence: the AltStore source file references IPAs by URL,
 # so any IPA listed in alt_source.json must resolve. Resolve dynamically.
 ipa_paths=$(curl -sL --max-time 10 "${BASE}/altstore/alt_source.json" \
-  | grep -oE '"downloadURL"\s*:\s*"[^"]+"' \
-  | sed -E 's/.*"downloadURL"\s*:\s*"([^"]+)".*/\1/' || true)
+  | grep -oE '"downloadURL"[[:space:]]*:[[:space:]]*"[^"]+"' \
+  | sed -E 's/.*"downloadURL"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/' || true)
 
 if [[ -n "${ipa_paths}" ]]; then
   printf "\nVerifying IPA URLs referenced in alt_source.json:\n"

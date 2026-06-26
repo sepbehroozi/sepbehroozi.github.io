@@ -1,3 +1,9 @@
+---
+layout: ../../layouts/Legal.astro
+title: Terms & Conditions — 4Barg
+description: Terms and conditions for the 4Barg mobile application.
+---
+
 **Terms & Conditions**  
 
 These terms and conditions apply to the 4Barg app for mobile devices, together with any related services operated by Sep Behroozi (collectively, the "Application"). Sep Behroozi is hereby referred to as the "Service Provider".
