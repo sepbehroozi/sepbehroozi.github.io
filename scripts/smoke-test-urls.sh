@@ -18,6 +18,8 @@ checks=(
   "/4barg/privacy_policy.html|text/html"
   "/4barg/terms_of_service|text/html"
   "/4barg/terms_of_service.html|text/html"
+  "/evilseven/privacy_policy|text/html"
+  "/evilseven/privacy_policy.html|text/html"
   "/sepool/privacy_policy|text/html"
   "/sepool/privacy_policy.html|text/html"
   "/sepool/terms_of_service|text/html"
