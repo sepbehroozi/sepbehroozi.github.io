@@ -3,10 +3,10 @@ interface Props { href: string; }
 const { href } = Astro.props;
 ---
 <a class="dl-cv" href={href} download>
-  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-    <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <span class="dl-cv-label">Download résumé</span>
+  <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+    <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
-  <span>Download CV</span>
 </a>
 
 <style>
@@ -14,22 +14,23 @@ const { href } = Astro.props;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: #0a0a18;
-    background: linear-gradient(120deg, var(--accent-from), var(--accent-to));
-    background-size: 200% 100%;
-    background-position: 0% 50%;
+    gap: 0.55rem;
+    padding: 0.65rem 1.1rem;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.01em;
+    color: var(--signal);
+    background: transparent;
+    border: 1px solid var(--signal-dim);
     text-decoration: none;
-    transition: background-position 0.4s ease, transform 0.15s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 18px rgba(196, 181, 253, 0.2);
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
   }
   .dl-cv:hover {
-    background-position: 100% 50%;
+    background: rgba(255, 180, 84, 0.08);
+    border-color: var(--signal);
     transform: translateY(-1px);
-    box-shadow: 0 6px 22px rgba(249, 168, 212, 0.28);
   }
+  .dl-cv svg { flex: 0 0 auto; }
 </style>

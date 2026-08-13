@@ -1,0 +1,40 @@
+---
+import { resume } from '../data/resume';
+import SkillGroup from './SkillGroup.astro';
+import EducationCard from './EducationCard.astro';
+const { skillGroups, education } = resume;
+---
+<section class="config">
+  <div class="skills-block">
+    <div class="label-eyebrow" data-anim="reveal">Skills</div>
+    <div class="manifest">
+      {skillGroups.map((g) => <SkillGroup group={g} />)}
+    </div>
+  </div>
+  <div class="edu-block">
+    <div class="label-eyebrow" data-anim="reveal">Education</div>
+    <div class="edu-list">
+      {education.map((item) => <EducationCard item={item} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .config {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .skills-block, .edu-block { display: flex; flex-direction: column; gap: 0.9rem; }
+  .manifest {
+    background: var(--ink-1);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    padding: 0.3rem 1rem;
+  }
+  .edu-list { display: flex; flex-direction: column; gap: 1rem; }
+
+  @media (min-width: 900px) {
+    .config { grid-template-columns: 1.6fr 1fr; align-items: start; }
+  }
+</style>
