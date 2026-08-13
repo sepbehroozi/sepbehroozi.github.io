@@ -1,13 +1,16 @@
 // Client-side animation initialization. Loaded only on the homepage from
-// Layout.astro via an inline <script> tag with a slot opt-in.
+// index.astro via an inline <script> tag.
 //
 // Behaviors:
-//   - Sidebar slides in from -16px / fades on initial load
-//   - Cards and section labels with [data-anim="reveal"] reveal as they
+//   - Hero fades/rises in on load
+//   - The trace spine (the vertical signal line running through the career
+//     timeline) draws itself in once, top to bottom, echoing a captured trace
+//   - Stage cards and section labels with [data-anim="reveal"] reveal as they
 //     enter the viewport (one-shot, IntersectionObserver-driven)
-//   - Backdrop orbs drift continuously and parallax with scroll & cursor
+//   - The "current role" marker's pulse is pure CSS and already respects
+//     prefers-reduced-motion via a media query in TraceTimeline.astro
 //
-// Respect prefers-reduced-motion: all motion becomes a 0-duration snap.
+// Respect prefers-reduced-motion: all motion here becomes a 0-duration snap.
 
 import { animate, inView, stagger } from 'motion';
 
@@ -31,24 +34,36 @@ export function initAnimations() {
     el.style.opacity = '0';
   });
 
-  // Sidebar entrance
-  const sidebar = document.querySelector<HTMLElement>('[data-anim="sidebar"]');
-  if (sidebar) {
+  // Hero entrance
+  const hero = document.querySelector<HTMLElement>('[data-anim="hero"]');
+  if (hero) {
     if (reduced) {
-      sidebar.style.opacity = '1';
+      hero.style.opacity = '1';
     } else {
-      sidebar.style.opacity = '0';
+      hero.style.opacity = '0';
       animate(
-        sidebar,
-        { opacity: [0, 1], x: [-16, 0] },
-        { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+        hero,
+        { opacity: [0, 1], y: [14, 0] },
+        { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+      );
+    }
+  }
+
+  // Trace spine draws itself in, then the stage reveals cascade after it
+  const spine = document.querySelector<HTMLElement>('[data-anim="trace-line"]');
+  if (spine) {
+    if (reduced) {
+      spine.style.transform = 'scaleY(1)';
+    } else {
+      animate(
+        spine,
+        { transform: ['scaleY(0)', 'scaleY(1)'] },
+        { duration: 0.9, delay: 0.2, ease: [0.65, 0, 0.35, 1] },
       );
     }
   }
 
   // Stagger reveal for any [data-anim="reveal"] currently in viewport on load
-  // (these would otherwise be revealed individually by inView; staggering
-  // them at once produces a nicer initial cascade).
   const reveals = Array.from(
     document.querySelectorAll<HTMLElement>('[data-anim="reveal"]'),
   );
@@ -56,10 +71,11 @@ export function initAnimations() {
     if (reduced) {
       reveals.forEach((el) => (el.style.opacity = '1'));
     } else {
+      const initialDelay = spine ? 0.5 : 0.1;
       animate(
         reveals.slice(0, 6),
         { opacity: [0, 1], y: [12, 0] },
-        { duration: 0.55, delay: stagger(0.06, { startDelay: 0.1 }), ease: [0.16, 1, 0.3, 1] },
+        { duration: 0.55, delay: stagger(0.08, { startDelay: initialDelay }), ease: [0.16, 1, 0.3, 1] },
       );
       // Anything past the first 6 (off-screen on load) gets revealed by inView
       reveals.slice(6).forEach((el) => {
@@ -68,41 +84,6 @@ export function initAnimations() {
         }, { amount: 0.2 });
       });
     }
-  }
-
-  // Backdrop orb drift + parallax
-  const orbs = Array.from(document.querySelectorAll<HTMLElement>('[data-orb]'));
-  if (orbs.length && !reduced) {
-    orbs.forEach((orb, i) => {
-      const amplitude = 18 + i * 6;
-      const duration = 18 + i * 4;
-      animate(
-        orb,
-        { x: [0, amplitude, 0], y: [0, -amplitude, 0] },
-        { duration, repeat: Infinity, ease: 'easeInOut' },
-      );
-    });
-
-    let scrollY = 0;
-    let mouseX = 0;
-    let mouseY = 0;
-    const onScroll = () => { scrollY = window.scrollY; };
-    const onMove = (e: MouseEvent) => {
-      mouseX = (e.clientX / window.innerWidth - 0.5) * 8;
-      mouseY = (e.clientY / window.innerHeight - 0.5) * 8;
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('mousemove', onMove, { passive: true });
-
-    // Apply parallax via inline style updates on rAF
-    const tick = () => {
-      orbs.forEach((orb, i) => {
-        const factor = 0.04 + i * 0.02;
-        orb.style.translate = `${mouseX * (i + 1)}px ${(-scrollY * factor) + mouseY * (i + 1)}px`;
-      });
-      requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
   }
 }
 

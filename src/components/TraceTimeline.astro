@@ -1,0 +1,70 @@
+---
+import type { Experience } from '../data/resume';
+import ExperienceCard from './ExperienceCard.astro';
+interface Props { items: Experience[]; }
+const { items } = Astro.props;
+---
+<div class="timeline">
+  <div class="spine" data-anim="trace-line"></div>
+  {items.map((item) => {
+    const isCurrent = item.range.end === 'present';
+    return (
+      <div class="stage-row">
+        <div class="marker-col">
+          <span class:list={['marker', { current: isCurrent }]} aria-hidden="true"></span>
+        </div>
+        <ExperienceCard item={item} current={isCurrent} />
+      </div>
+    );
+  })}
+</div>
+
+<style>
+  .timeline { position: relative; }
+  .spine {
+    position: absolute;
+    left: 13px;
+    top: 0.65rem;
+    bottom: 1.9rem;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--trace-dim), var(--hairline) 92%);
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  .stage-row {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 1.25rem;
+    position: relative;
+  }
+  .marker-col { display: flex; justify-content: center; }
+  .marker {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--ink-0);
+    border: 2px solid var(--trace-dim);
+    margin-top: 0.55rem;
+    position: relative;
+    z-index: 2;
+  }
+  .marker.current {
+    border-color: var(--signal);
+    background: var(--signal);
+    animation: pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 180, 84, 0.45); }
+    70% { box-shadow: 0 0 0 9px rgba(255, 180, 84, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 180, 84, 0); }
+  }
+
+  @media (max-width: 560px) {
+    .stage-row { grid-template-columns: 18px 1fr; gap: 0.85rem; }
+    .spine { left: 8px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marker.current { animation: none; box-shadow: 0 0 0 3px rgba(255, 180, 84, 0.25); }
+  }
+</style>

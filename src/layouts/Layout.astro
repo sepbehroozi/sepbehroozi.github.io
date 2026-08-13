@@ -6,11 +6,13 @@ interface Props {
   title?: string;
   description?: string;
   ogType?: 'website' | 'article';
+  backdropVariant?: 'orbs' | 'grid';
 }
 const {
   title = 'Sep Behroozi',
   description = 'Software engineer building mobile apps and developer tooling.',
   ogType = 'website',
+  backdropVariant = 'orbs',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -36,7 +38,7 @@ const ogImage = new URL('/og-image.png', Astro.site).toString();
     <meta name="twitter:image" content={ogImage} />
   </head>
   <body>
-    <Backdrop />
+    <Backdrop variant={backdropVariant} />
     <slot />
   </body>
 </html>

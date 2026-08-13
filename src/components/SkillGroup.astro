@@ -3,29 +3,32 @@ import type { SkillGroup } from '../data/resume';
 interface Props { group: SkillGroup; }
 const { group } = Astro.props;
 ---
-<div class="skill-group">
-  <div class="label-eyebrow">{group.label}</div>
-  <ul class="pills">
-    {group.items.map((item) => <li class="pill">{item}</li>)}
-  </ul>
+<div class="row" data-anim="reveal">
+  <span class="key">{group.label}</span>
+  <span class="value">{group.items.join('  ·  ')}</span>
 </div>
 
 <style>
-  .skill-group { display: flex; flex-direction: column; gap: 0.5rem; }
-  .pills {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
+  .row {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--hairline);
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
   }
-  .pill {
-    font-size: 0.78rem;
-    padding: 0.22rem 0.6rem;
-    border-radius: 9999px;
-    background: var(--pill-bg);
-    border: 1px solid var(--pill-border);
-    color: var(--text-secondary);
+  .row:last-child { border-bottom: none; }
+  .key {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    color: var(--signal-dim);
+    padding-top: 0.15rem;
+  }
+  .value { color: var(--mist); line-height: 1.6; }
+
+  @media (max-width: 640px) {
+    .row { grid-template-columns: 1fr; gap: 0.35rem; }
   }
 </style>
