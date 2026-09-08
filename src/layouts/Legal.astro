@@ -4,16 +4,33 @@ interface Frontmatter {
   title?: string;
   description?: string;
 }
+interface LangStrings {
+  title: string;
+  heading: string;
+  back: string;
+}
 interface Props {
   frontmatter?: Frontmatter;
   title?: string;
   description?: string;
+  /**
+   * When set, the page renders in bilingual mode: a language toggle appears
+   * top-right, the active language is chosen from `?lang=` (falling back to the
+   * browser language, then English), and the whole page — heading, back link,
+   * tab title, and text direction — switches with it. The page is expected to
+   * provide the content itself as two `[data-lang-block]` articles in the slot.
+   */
+  bilingual?: { en: LangStrings; fa: LangStrings };
 }
 const props = Astro.props;
 const { title, description } = props.frontmatter ?? props;
+const bilingual = props.bilingual;
 const fullTitle = title ?? 'Sep Behroozi';
 const desc = description ?? 'Software engineer.';
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const langTitles = bilingual
+  ? { en: bilingual.en.title, fa: bilingual.fa.title }
+  : null;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +50,27 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={desc} />
     <meta name="twitter:image" content={new URL('/og-image.png', Astro.site).toString()} />
+    {bilingual && (
+      <script is:inline define:vars={{ langTitles }}>
+        // Decide the language before first paint so the correct content shows
+        // without a flash. `?lang=` wins; otherwise fall back to the browser
+        // language (Persian → fa), then English.
+        (function () {
+          try {
+            var params = new URLSearchParams(window.location.search);
+            var lang = params.get('lang');
+            if (lang !== 'en' && lang !== 'fa') {
+              lang = (navigator.language || '').toLowerCase().indexOf('fa') === 0 ? 'fa' : 'en';
+            }
+            var root = document.documentElement;
+            root.setAttribute('data-lang', lang);
+            root.lang = lang;
+            root.dir = lang === 'fa' ? 'rtl' : 'ltr';
+            if (langTitles && langTitles[lang]) document.title = langTitles[lang];
+          } catch (e) {}
+        })();
+      </script>
+    )}
   </head>
   <body class="bg-ink-base text-[color:var(--text-primary)]">
     <div
@@ -42,15 +80,63 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     ></div>
 
     <main class="mx-auto max-w-2xl px-6 py-16">
-      <a
-        href="/"
-        class="label-eyebrow inline-block mb-8 hover:text-[color:var(--text-secondary)] transition-colors"
-      >&larr; Sep Behroozi</a>
-      <h1 class="text-3xl md:text-4xl font-semibold mb-2">{fullTitle}</h1>
-      <article class="legal-prose">
-        <slot />
-      </article>
+      {bilingual ? (
+        <>
+          <div class="legal-topbar">
+            <a href="/" class="label-eyebrow legal-back" data-lang-block="en">{bilingual.en.back}</a>
+            <a href="/" class="label-eyebrow legal-back" data-lang-block="fa">{bilingual.fa.back}</a>
+            <button type="button" class="lang-toggle" data-lang-toggle aria-label="Switch language">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12h18" />
+                <path d="M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3z" />
+              </svg>
+              <span data-lang-block="en">فارسی</span>
+              <span data-lang-block="fa">English</span>
+            </button>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-semibold mb-2" data-lang-block="en">{bilingual.en.heading}</h1>
+          <h1 class="text-3xl md:text-4xl font-semibold mb-2" data-lang-block="fa">{bilingual.fa.heading}</h1>
+          <slot />
+        </>
+      ) : (
+        <>
+          <a
+            href="/"
+            class="label-eyebrow inline-block mb-8 hover:text-[color:var(--text-secondary)] transition-colors"
+          >&larr; Sep Behroozi</a>
+          <h1 class="text-3xl md:text-4xl font-semibold mb-2">{fullTitle}</h1>
+          <article class="legal-prose">
+            <slot />
+          </article>
+        </>
+      )}
     </main>
+
+    {bilingual && (
+      <script is:inline define:vars={{ langTitles }}>
+        // Wire the language toggle: flip the language, update direction, tab
+        // title, and the URL (`?lang=`) so the current view is shareable.
+        (function () {
+          function apply(lang) {
+            var root = document.documentElement;
+            root.setAttribute('data-lang', lang);
+            root.lang = lang;
+            root.dir = lang === 'fa' ? 'rtl' : 'ltr';
+            if (langTitles && langTitles[lang]) document.title = langTitles[lang];
+            var url = new URL(window.location.href);
+            url.searchParams.set('lang', lang);
+            window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+          }
+          document.querySelectorAll('[data-lang-toggle]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var current = document.documentElement.getAttribute('data-lang') === 'fa' ? 'fa' : 'en';
+              apply(current === 'fa' ? 'en' : 'fa');
+            });
+          });
+        })();
+      </script>
+    )}
 
     <style is:global>
       .legal-prose {
@@ -90,6 +176,49 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
       }
       /* Allow inline image styling (used in power-optimization-settings.md) */
       .legal-prose img { max-width: 100%; vertical-align: middle; }
+
+      /* --- Bilingual mode --- */
+      /* Show only the active language's blocks. Default (no data-lang set, e.g.
+         JavaScript disabled) shows English and hides Persian. */
+      html:not([data-lang="fa"]) [data-lang-block="fa"] { display: none; }
+      html[data-lang="fa"] [data-lang-block="en"] { display: none; }
+
+      /* Right-to-left list bullets sit on the correct side in Persian. */
+      html[data-lang="fa"] .legal-prose ul,
+      html[data-lang="fa"] .legal-prose ol {
+        padding-left: 0;
+        padding-right: 1.5em;
+      }
+
+      .legal-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+      .legal-back {
+        display: inline-block;
+        transition: color 0.15s ease;
+      }
+      .legal-back:hover { color: var(--text-secondary); }
+      .lang-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.35rem 0.7rem;
+        border: 1px solid var(--surface-border);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: color 0.15s ease, border-color 0.15s ease;
+      }
+      .lang-toggle:hover {
+        color: var(--text-primary);
+        border-color: var(--accent-from);
+      }
     </style>
   </body>
 </html>

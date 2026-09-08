@@ -1,9 +1,3 @@
----
-layout: ../../layouts/Legal.astro
-title: Terms of Service — Harf Peach
-description: Terms of service for the Harf Peach mobile game.
----
-
 **Terms & Conditions**
 
 These terms and conditions apply to the Harf Peach app for mobile devices, together with any related services operated by Sep Behroozi (collectively, the "Application"). Sep Behroozi is hereby referred to as the "Service Provider".

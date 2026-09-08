@@ -1,0 +1,18 @@
+---
+import Legal from '../../layouts/Legal.astro';
+import { Content as En } from '../../legal/harfpeach/terms_of_service.en.md';
+import { Content as Fa } from '../../legal/harfpeach/terms_of_service.fa.md';
+
+const bilingual = {
+  en: { title: 'Terms of Service — Harf Peach', heading: 'Terms & Conditions', back: '← Sep Behroozi' },
+  fa: { title: 'شرایط و ضوابط — Harf Peach', heading: 'شرایط و ضوابط', back: 'Sep Behroozi →' },
+};
+---
+<Legal
+  title="Terms of Service — Harf Peach"
+  description="Terms of service for the Harf Peach mobile game."
+  bilingual={bilingual}
+>
+  <article class="legal-prose" data-lang-block="en" lang="en"><En /></article>
+  <article class="legal-prose" data-lang-block="fa" lang="fa" dir="rtl"><Fa /></article>
+</Legal>

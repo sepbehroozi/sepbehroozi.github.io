@@ -1,9 +1,3 @@
----
-layout: ../../layouts/Legal.astro
-title: Privacy Policy — Harf Peach
-description: Privacy policy for the Harf Peach mobile game.
----
-
 **Privacy Policy**
 
 This privacy policy applies to the Harf Peach app for mobile devices, together with any related services operated by Sep Behroozi (collectively, the "Application"). Sep Behroozi is hereby referred to as the "Service Provider".
