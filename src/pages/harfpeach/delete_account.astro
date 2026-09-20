@@ -1,0 +1,213 @@
+---
+import Legal from '../../layouts/Legal.astro';
+
+const bilingual = {
+  en: { title: 'Delete Account — Harf Peach', heading: 'How to Delete Your Account', back: '← Sep Behroozi' },
+  fa: { title: 'حذف حساب کاربری — Harf Peach', heading: 'حذف حساب کاربری', back: 'Sep Behroozi →' },
+};
+---
+<Legal
+  title="Delete Account — Harf Peach"
+  description="Step-by-step guide to permanently delete your Harf Peach (حرف‌پیچ) account from the app."
+  bilingual={bilingual}
+>
+  <!-- English -->
+  <article class="hp-guide" data-lang-block="en" lang="en">
+    <p class="hp-intro">
+      Deleting your Harf&nbsp;Peach account is <strong>permanent</strong>. All of your
+      data — including coins, diamonds and experience (XP) — is erased for good, and your
+      username, phone number and linked Google account are released. This cannot be undone.
+    </p>
+
+    <ol class="hp-steps">
+      <li class="hp-step">
+        <h2>Open your profile</h2>
+        <p>
+          Open Harf&nbsp;Peach. On the home screen, tap your <strong>profile</strong> — the pill
+          at the top-left showing your username and level.
+        </p>
+        <img
+          src="/harfpeach/screenshots/home.jpg"
+          alt="Harf Peach home screen with the profile pill highlighted at the top-left"
+          class="hp-screenshot"
+          loading="lazy"
+        />
+      </li>
+
+      <li class="hp-step">
+        <h2>Find &ldquo;Delete account&rdquo;</h2>
+        <p>
+          On the Profile screen, scroll to the very bottom to the
+          <strong>&ldquo;حذف حساب کاربری&rdquo;</strong> (Delete account) section, then tap the
+          red <strong>Delete account</strong> button.
+        </p>
+        <img
+          src="/harfpeach/screenshots/profile.jpg"
+          alt="Harf Peach profile screen with the Delete account button highlighted at the bottom"
+          class="hp-screenshot"
+          loading="lazy"
+        />
+      </li>
+
+      <li class="hp-step">
+        <h2>Confirm deletion</h2>
+        <p>
+          A confirmation dialog appears. Tap <strong>&ldquo;حذف حساب&rdquo;</strong> (Delete account)
+          to permanently delete your account. To keep your account instead, tap
+          <strong>&ldquo;انصراف&rdquo;</strong> (Cancel).
+        </p>
+        <img
+          src="/harfpeach/screenshots/delete-dialog.jpg"
+          alt="Harf Peach delete-account confirmation dialog with the Delete account button highlighted"
+          class="hp-screenshot"
+          loading="lazy"
+        />
+      </li>
+    </ol>
+
+    <p class="hp-outro">
+      Once you confirm, your account is deleted immediately and you are signed out.
+    </p>
+  </article>
+
+  <!-- Persian -->
+  <article class="hp-guide" data-lang-block="fa" lang="fa" dir="rtl">
+    <p class="hp-intro">
+      حذف حساب کاربری در حرف‌پیچ <strong>همیشگی</strong> است. با حذف حساب، همهٔ اطلاعات شما شامل
+      سکه‌ها، الماس‌ها و امتیاز تجربه برای همیشه از بین می‌رود و نام کاربری، شمارهٔ تلفن و حساب
+      گوگل شما آزاد می‌شود. این کار قابل بازگشت نیست.
+    </p>
+
+    <ol class="hp-steps">
+      <li class="hp-step">
+        <h2>باز کردن پروفایل</h2>
+        <p>
+          برنامهٔ حرف‌پیچ را باز کنید. در صفحهٔ اصلی، روی <strong>پروفایل</strong> خود ضربه بزنید —
+          همان کادر بالای صفحه که نام کاربری و سطح شما را نشان می‌دهد.
+        </p>
+        <img
+          src="/harfpeach/screenshots/home.jpg"
+          alt="صفحهٔ اصلی حرف‌پیچ با مشخص‌شدن کادر پروفایل در بالای صفحه"
+          class="hp-screenshot"
+          loading="lazy"
+        />
+      </li>
+
+      <li class="hp-step">
+        <h2>پیدا کردن «حذف حساب کاربری»</h2>
+        <p>
+          در صفحهٔ پروفایل، تا پایین صفحه اسکرول کنید تا به بخش
+          <strong>«حذف حساب کاربری»</strong> برسید، سپس روی دکمهٔ قرمز
+          <strong>«حذف حساب کاربری»</strong> ضربه بزنید.
+        </p>
+        <img
+          src="/harfpeach/screenshots/profile.jpg"
+          alt="صفحهٔ پروفایل حرف‌پیچ با مشخص‌شدن دکمهٔ حذف حساب کاربری در پایین صفحه"
+          class="hp-screenshot"
+          loading="lazy"
+        />
+      </li>
+
+      <li class="hp-step">
+        <h2>تأیید حذف</h2>
+        <p>
+          یک پنجرهٔ تأیید باز می‌شود. برای حذف همیشگی حساب، روی <strong>«حذف حساب»</strong> ضربه
+          بزنید. اگر می‌خواهید حساب شما بماند، به‌جای آن روی <strong>«انصراف»</strong> ضربه بزنید.
+        </p>
+        <img
+          src="/harfpeach/screenshots/delete-dialog.jpg"
+          alt="پنجرهٔ تأیید حذف حساب حرف‌پیچ با مشخص‌شدن دکمهٔ حذف حساب"
+          class="hp-screenshot"
+          loading="lazy"
+        />
+      </li>
+    </ol>
+
+    <p class="hp-outro">
+      پس از تأیید، حساب شما بلافاصله حذف می‌شود و از حساب خارج می‌شوید.
+    </p>
+  </article>
+</Legal>
+
+<style>
+  .hp-guide {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .hp-intro,
+  .hp-outro {
+    margin-bottom: 1em;
+  }
+
+  .hp-outro {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--surface-border);
+    color: var(--text-tertiary);
+    font-size: 0.95rem;
+  }
+
+  .hp-guide strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .hp-steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .hp-step {
+    counter-increment: step;
+    position: relative;
+    padding-inline-start: 3rem;
+  }
+
+  .hp-step::before {
+    content: counter(step);
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-from) 0%, var(--accent-to) 100%);
+    color: var(--bg-base);
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  .hp-step h2 {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin: 0 0 0.4em;
+  }
+
+  .hp-step p {
+    margin: 0 0 0.75rem;
+  }
+
+  .hp-screenshot {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 1.25rem;
+    border: 1px solid var(--surface-border);
+    margin-top: 0.75rem;
+  }
+</style>
