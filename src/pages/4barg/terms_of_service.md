@@ -32,6 +32,8 @@ Unauthorized copying, modification of the Application, any part of the Applicati
 
 **User-Generated Content and Acceptable Use**
 
+The Service Provider maintains a strict zero-tolerance policy toward objectionable content and abusive users. Objectionable content — including but not limited to the categories listed below — is not permitted anywhere in the Application, and there is no tolerance for users who post it or who harass, abuse, or threaten others.
+
 If this Application allows users to post, share, or upload content, you agree not to post content that:
 
 *   Is illegal or violates third-party intellectual property rights (copyright, trademark, patents)
@@ -54,6 +56,22 @@ Content submitted through the Application may be visible to other users or to th
 If you believe content violates these Terms, infringes your rights, or is unlawful, you may report it to the Service Provider at efromfb@gmail.com. The report should include enough information for the Service Provider to identify the content, evaluate the complaint, and contact you if follow-up is required.
 
 Where the Application provides such features, you may also report content, block other users, or mute notifications directly through the Application's interface. The Service Provider will review in-app reports with the same standards described in these Terms.
+
+**Reporting Content in In-App Chat**
+
+The Application includes private (one-to-one) chat and a global (public) chat. If you encounter content that violates these Terms in either chat, you can report it directly within the Application: open the offending message, choose the report action ("گزارش تخلف"), and confirm. You can also block abusive users so that they can no longer contact you.
+
+The Service Provider acts on in-app reports within 24 hours of receipt. Where a report is upheld, the offending content is removed and the account responsible for providing it is ejected, in addition to any further action described in these Terms.
+
+**Enforcement and Account Suspension**
+
+When a report or moderation review confirms that a user has posted content or engaged in behavior that violates these Terms, the Service Provider applies a graduated, three-strike suspension policy:
+
+*   **First confirmed violation:** the account is temporarily suspended for 72 hours.
+*   **Second confirmed violation:** the account is temporarily suspended for a further 72 hours, and the user is warned that another violation will result in a permanent ban.
+*   **Third confirmed violation:** the account is permanently banned. A permanent ban is not lifted automatically, and any in-game virtual currency (coins) associated with the account is forfeited.
+
+Temporary suspensions expire automatically at the end of the 72-hour period, but the violation count is retained, so subsequent violations continue to count toward a permanent ban. The Service Provider may, following review, lift a suspension or reset a user's violation count (for example, where a report is found to be unjustified). Permanent bans are reviewed only by the Service Provider and are not reversed automatically; affected users may contact the Service Provider at efromfb@gmail.com to request review.
 
 The Service Provider may review reported content, request additional information where necessary, remove or restrict access to content, and take action against the responsible account where appropriate. Users affected by moderation decisions may contact the Service Provider at efromfb@gmail.com to request further review. The Service Provider will respond to appeals within a reasonable period and provide the reasons for any upheld moderation decision, subject to applicable law.
 
