@@ -1,0 +1,160 @@
+---
+/**
+ * Renders a legal document (privacy policy, terms) in both languages with a
+ * table of contents. The markdown marks each section title as a bold line on
+ * its own (`**Title**`), so this turns those paragraphs into real <h2>s with
+ * anchors at build time; the copy itself is left exactly as written.
+ */
+interface Props {
+  enHtml: string;
+  faHtml: string;
+}
+const { enHtml, faHtml } = Astro.props;
+
+type Heading = { id: string; html: string };
+
+function sectionize(html: string, prefix: string): { body: string; headings: Heading[] } {
+  const headings: Heading[] = [];
+  let first = true;
+  const body = html.replace(/<p>\s*<strong>([\s\S]*?)<\/strong>\s*<\/p>/g, (_m, inner: string) => {
+    // The opening bold line repeats the document title, which the page
+    // heading already shows.
+    if (first) {
+      first = false;
+      return '';
+    }
+    const id = `${prefix}-${headings.length + 1}`;
+    headings.push({ id, html: inner });
+    return `<h2 id="${id}">${inner}</h2>`;
+  });
+  return { body, headings };
+}
+
+const langs = [
+  { lang: 'en', dir: 'ltr', toc: 'On this page', ...sectionize(enHtml, 'en') },
+  { lang: 'fa', dir: 'rtl', toc: 'در این صفحه', ...sectionize(faHtml, 'fa') },
+];
+---
+<section class="hp-legal-sec">
+  {langs.map((l) => (
+    <div class="hp-wrap hp-legal" data-lang-block={l.lang} lang={l.lang} dir={l.dir}>
+      <aside class="hp-toc">
+        <details class="hp-toc-mob">
+          <summary>{l.toc}</summary>
+          <ol>
+            {l.headings.map((h) => <li><a href={`#${h.id}`} set:html={h.html} /></li>)}
+          </ol>
+        </details>
+        <nav class="hp-toc-desk" aria-label={l.toc}>
+          <p class="hp-toc-title">{l.toc}</p>
+          <ol>
+            {l.headings.map((h) => <li><a href={`#${h.id}`} data-toc-link set:html={h.html} /></li>)}
+          </ol>
+        </nav>
+      </aside>
+      <article class="hp-prose" set:html={l.body} />
+    </div>
+  ))}
+</section>
+
+<script is:inline>
+  // Highlight the section being read in the desktop table of contents.
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var links = {};
+    document.querySelectorAll('a[data-toc-link]').forEach(function (a) {
+      links[a.getAttribute('href').slice(1)] = a;
+    });
+    var visible = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { visible[e.target.id] = e.isIntersecting; });
+      var html = document.documentElement;
+      var prefix = html.getAttribute('data-lang') === 'fa' ? 'fa-' : 'en-';
+      var current = null;
+      document.querySelectorAll('.hp-prose h2[id^="' + prefix + '"]').forEach(function (h) {
+        if (current === null && visible[h.id]) current = h.id;
+      });
+      if (!current) return;
+      Object.keys(links).forEach(function (id) {
+        if (id === current) links[id].setAttribute('aria-current', 'location');
+        else links[id].removeAttribute('aria-current');
+      });
+    }, { rootMargin: '-10% 0px -60% 0px' });
+    document.querySelectorAll('.hp-prose h2[id]').forEach(function (h) { io.observe(h); });
+  })();
+</script>
+
+<style is:global>
+  .hp-legal-sec { padding-bottom: 96px; }
+  .hp-legal {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+  .hp-toc { position: sticky; top: 24px; }
+  .hp-toc-mob { display: none; }
+  .hp-toc-title { font-size: 14px; font-weight: 800; color: var(--muted); padding: 0 14px 10px; }
+  .hp-toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  .hp .hp-toc a {
+    display: block; padding: 8px 14px; border-radius: 12px;
+    font-size: 14px; line-height: 1.5; color: var(--muted);
+    transition: background-color .15s ease, color .15s ease;
+  }
+  .hp .hp-toc a:hover { color: var(--text); background: var(--surface); }
+  .hp .hp-toc a[aria-current="location"] { color: var(--peach-ink); background: var(--surface); font-weight: 700; }
+
+  .hp-prose {
+    background: var(--surface);
+    border-radius: 28px;
+    box-shadow: 0 6px 0 var(--shadow);
+    padding: 48px 56px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 820px;
+    overflow-wrap: anywhere;
+  }
+  .hp-prose[lang="fa"], [lang="fa"] .hp-prose { line-height: 2; }
+  .hp-prose > :first-child { margin-top: 0; }
+  .hp-prose h2 {
+    margin: 2.2em 0 .6em;
+    font-size: 22px;
+    line-height: 1.45;
+    font-weight: 800;
+    color: var(--text);
+    scroll-margin-top: 24px;
+  }
+  .hp-prose h2:first-child { margin-top: 0; }
+  .hp-prose p { margin: 0 0 1em; }
+  .hp-prose strong { color: var(--text); font-weight: 700; }
+  .hp-prose ul, .hp-prose ol { margin: 0 0 1.2em; padding-inline-start: 1.4em; }
+  .hp-prose li { margin-bottom: .5em; padding-inline-start: .2em; }
+  .hp-prose li::marker { color: var(--peach-ink); }
+  .hp .hp-prose a {
+    color: var(--peach-ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .hp .hp-prose a:hover { text-decoration-thickness: 2px; }
+  .hp-prose code { background: var(--band); padding: .1em .4em; border-radius: 6px; font-size: .9em; }
+
+  @media (max-width: 900px) {
+    .hp-legal { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+    .hp-toc { position: static; }
+    .hp-toc-desk { display: none; }
+    .hp-toc-mob { display: block; background: var(--surface); border-radius: 20px; box-shadow: 0 4px 0 var(--shadow); }
+    .hp-toc-mob summary {
+      cursor: pointer; padding: 14px 20px; font-size: 15px; font-weight: 800; color: var(--text);
+      list-style-position: inside;
+    }
+    .hp-toc-mob ol { padding: 0 6px 12px; }
+    .hp-prose { padding: 28px 22px; font-size: 16px; border-radius: 24px; }
+    .hp-prose h2 { font-size: 20px; }
+    .hp-legal-sec { padding-bottom: 64px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hp-toc a { transition: none; }
+  }
+</style>

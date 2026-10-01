@@ -1,0 +1,55 @@
+<script is:inline>
+  // In-page links (#section): animate the scroll ourselves. CSS
+  // scroll-behavior is skipped by some browsers and settings, so it cannot be
+  // relied on. Reduced-motion users still jump straight there.
+  (function () {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function easeInOutCubic(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+    var scrollAnim = 0;
+    function cancelScroll() { if (scrollAnim) { cancelAnimationFrame(scrollAnim); scrollAnim = 0; } }
+    // Any user scroll input takes over from a running animation.
+    ['wheel', 'touchstart', 'keydown'].forEach(function (type) {
+      window.addEventListener(type, cancelScroll, { passive: true });
+    });
+    function smoothScrollTo(y) {
+      cancelScroll();
+      var startY = window.scrollY;
+      var dist = y - startY;
+      if (reduceMotion.matches || Math.abs(dist) < 2) { window.scrollTo(0, y); return; }
+      var duration = Math.min(900, Math.max(350, Math.abs(dist) * 0.35));
+      var t0 = null;
+      function step(now) {
+        if (t0 === null) t0 = now;
+        var p = Math.min(1, (now - t0) / duration);
+        window.scrollTo(0, startY + dist * easeInOutCubic(p));
+        scrollAnim = p < 1 ? requestAnimationFrame(step) : 0;
+      }
+      scrollAnim = requestAnimationFrame(step);
+    }
+    document.addEventListener('click', function (e) {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var link = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!link) return;
+      var id = decodeURIComponent(link.getAttribute('href').slice(1));
+      var target = id && document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      // A link inside a collapsible list (the phone table of contents) closes
+      // it first, so the target's position is measured after the list folds.
+      var details = link.closest('details');
+      if (details) details.open = false;
+      var margin = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+      var y = id === 'top' ? 0 : target.getBoundingClientRect().top + window.scrollY - margin;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      smoothScrollTo(Math.max(0, Math.min(y, max)));
+      history.pushState(null, '', window.location.pathname + window.location.search + '#' + id);
+      // Move keyboard focus to the target without a second, instant scroll.
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    });
+  })();
+</script>
+
+<style is:global>
+  .hp [tabindex="-1"]:focus { outline: none; }
+</style>

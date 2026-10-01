@@ -1,0 +1,10 @@
+<script is:inline>
+  // Apply a saved theme choice before first paint; otherwise the
+  // prefers-color-scheme rules in harfpeach.css decide.
+  (function () {
+    try {
+      var t = localStorage.getItem('hp-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>

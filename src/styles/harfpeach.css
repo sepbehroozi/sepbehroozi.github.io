@@ -1,0 +1,139 @@
+/* Harf Peach site theme: the game's palette (harf-peach HpColors) as light and
+   dark tokens, plus the pieces every Harf Peach page shares. Pages scope their
+   markup under `.hp`. */
+
+:root {
+  color-scheme: light;
+  --bg: #FFEBDD;
+  --band: #FFF4EC;
+  --surface: #FFFFFF;
+  --surface-2: #FFE0CB;
+  --text: #5A3B2C;
+  --muted: #82614A;
+  --faint: #B19C8E;
+  --border: #F0DBCD;
+  --shadow: #EAD3C6;
+  --icon-shadow: #F3C8AE;
+  --peach-ink: #D5502E;
+  --green-ink: #3E8A4A;
+  --lilac-ink: #6B4AA0;
+  --blob-peach: #FFD8C2;
+  --blob-green: #DCEFDD;
+  --wheel-ring: #FFD8C2;
+  --wheel-face: #FFFFFF;
+  --green-tint: #DCEFDD;
+  --green-edge: #BEDDC1;
+  --gold-tint: #FFE6A8;
+  --gold-edge: #F2CC6E;
+  --lilac-tint: #EEE6FB;
+  --lilac-edge: #D6C6EF;
+  --peach-tint: #FFE0CB;
+  --peach-edge: #F3C8AE;
+  --red-tint: #FDE2DF;
+  --red-edge: #F4C3BD;
+  --red-ink: #B43A30;
+  --msg-good: #3E8A4A;
+  --msg-bad: #B43A30;
+  /* Candy colours shared by both themes. */
+  --peach-face: #E15A36;
+  --peach-shadow: #B0402A;
+  --purple-face: #7E50CC;
+  --purple-shadow: #5E36A6;
+  --leaf-face: #3E8A4A;
+  --leaf-shadow: #2C6B36;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #1D1310; --band: #251913; --surface: #2E2019; --surface-2: #2A1C16;
+    --text: #FBE7DA; --muted: #D2B4A0; --faint: #7F6B5F; --border: #3B2A21;
+    --shadow: #130C09; --icon-shadow: #120B08; --peach-ink: #FF9A78; --green-ink: #8FD097;
+    --lilac-ink: #C7A8F5; --blob-peach: #2C1C15; --blob-green: #1B2419; --wheel-ring: #3A261D;
+    --wheel-face: #2A1C16; --green-tint: #1D2A1F; --green-edge: #122015; --gold-tint: #33280F;
+    --gold-edge: #211A08; --lilac-tint: #271F35; --lilac-edge: #191324; --peach-tint: #36211A;
+    --peach-edge: #22140F; --red-tint: #3A1C19; --red-edge: #24100E; --red-ink: #FF9A8F;
+    --msg-good: #8FD097; --msg-bad: #FF9A8F;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1D1310; --band: #251913; --surface: #2E2019; --surface-2: #2A1C16;
+  --text: #FBE7DA; --muted: #D2B4A0; --faint: #7F6B5F; --border: #3B2A21;
+  --shadow: #130C09; --icon-shadow: #120B08; --peach-ink: #FF9A78; --green-ink: #8FD097;
+  --lilac-ink: #C7A8F5; --blob-peach: #2C1C15; --blob-green: #1B2419; --wheel-ring: #3A261D;
+  --wheel-face: #2A1C16; --green-tint: #1D2A1F; --green-edge: #122015; --gold-tint: #33280F;
+  --gold-edge: #211A08; --lilac-tint: #271F35; --lilac-edge: #191324; --peach-tint: #36211A;
+  --peach-edge: #22140F; --red-tint: #3A1C19; --red-edge: #24100E; --red-ink: #FF9A8F;
+  --msg-good: #8FD097; --msg-bad: #FF9A8F;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Vazirmatn Variable', 'Figtree Variable', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.hp { min-height: 100dvh; overflow-x: hidden; transition: background-color .3s ease, color .3s ease; }
+.hp *, .hp *::before, .hp *::after { box-sizing: border-box; }
+.hp a { color: inherit; text-decoration: none; }
+.hp img { display: block; }
+.hp :focus-visible { outline: 3px solid #8B5BD6; outline-offset: 3px; }
+.hp h1, .hp h2, .hp h3, .hp p { margin: 0; }
+.hp [lang="en"], .hp-latin { font-family: 'Figtree Variable', 'Vazirmatn Variable', system-ui, sans-serif; }
+
+.hp-wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Candy buttons: the game's raised face with a solid bottom edge. */
+.hp-candy {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: none; font-family: inherit; cursor: pointer; white-space: nowrap;
+  transition: transform .16s var(--ease);
+}
+.hp-candy:hover { transform: translateY(-2px); }
+.hp-candy:active { transform: translateY(4px); }
+.hp-btn-peach { color: #FFFFFF; background: var(--peach-face); font-weight: 800; }
+.hp-btn-plain { color: var(--text); background: var(--surface); font-weight: 700; }
+.hp-btn-sm { height: 44px; padding: 0 20px; border-radius: 14px; font-size: 16px; }
+.hp-btn-peach.hp-btn-sm { box-shadow: 0 4px 0 var(--peach-shadow); }
+.hp-btn-plain.hp-btn-sm { box-shadow: 0 4px 0 var(--shadow); }
+.hp-btn-md { height: 48px; padding: 0 22px; border-radius: 16px; font-size: 16px; box-shadow: 0 4px 0 var(--shadow); }
+.hp-btn-lg { height: 60px; padding: 0 28px; border-radius: 20px; font-size: 19px; }
+.hp-btn-peach.hp-btn-lg { box-shadow: 0 6px 0 var(--peach-shadow); }
+.hp-btn-plain.hp-btn-lg { box-shadow: 0 6px 0 var(--shadow); font-size: 18px; }
+
+/* Header */
+.hp-header { position: relative; z-index: 2; }
+.hp-nav { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.hp-brand { display: flex; align-items: center; gap: 12px; }
+.hp-brand img { width: 44px; height: 44px; border-radius: 12px; box-shadow: 0 3px 0 var(--shadow); }
+.hp-brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.hp-brand-fa { font-size: 20px; font-weight: 800; color: var(--peach-ink); font-family: 'Vazirmatn Variable', system-ui, sans-serif; }
+.hp-brand-en { font-size: 12px; font-weight: 700; letter-spacing: .02em; color: var(--muted); }
+.hp-nav-actions { display: flex; align-items: center; gap: 12px; }
+.hp-theme-btn { width: 44px; height: 44px; border-radius: 14px; background: var(--surface); color: var(--text); box-shadow: 0 4px 0 var(--shadow); }
+.hp-icon-sun { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hp-icon-sun { display: block; }
+  :root:not([data-theme="light"]) .hp-icon-moon { display: none; }
+}
+:root[data-theme="dark"] .hp-icon-sun { display: block; }
+:root[data-theme="dark"] .hp-icon-moon { display: none; }
+
+/* Footer */
+.hp-footer { padding: 36px 0 40px; border-top: 1px solid var(--border); }
+.hp-foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.hp-foot-brand { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--muted); }
+.hp-foot-brand img { width: 36px; height: 36px; border-radius: 10px; }
+.hp-foot-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; font-size: 15px; font-weight: 500; }
+.hp-foot-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.hp-foot-links a[aria-current="page"] { color: var(--peach-ink); font-weight: 700; }
+.hp-foot-links .hp-foot-faint { color: var(--faint); font-size: 14px; font-weight: 400; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-candy { transition: none; }
+}
+@media (max-width: 900px) {
+  .hp-wrap { padding: 0 16px; }
+}

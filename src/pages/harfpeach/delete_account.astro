@@ -1,31 +1,38 @@
 ---
-import Legal from '../../layouts/Legal.astro';
-
-const bilingual = {
-  en: { title: 'Delete Account — Harf Peach', heading: 'How to Delete Your Account', back: '← Sep Behroozi' },
-  fa: { title: 'حذف حساب کاربری — Harf Peach', heading: 'حذف حساب کاربری', back: 'Sep Behroozi →' },
-};
+import HarfPeachDoc from '../../layouts/HarfPeachDoc.astro';
 ---
-<Legal
-  title="Delete Account — Harf Peach"
+<HarfPeachDoc
+  current="delete"
   description="Step-by-step guide to permanently delete your Harf Peach (حرف‌پیچ) account from the app."
-  bilingual={bilingual}
+  en={{
+    title: 'Delete Account | Harf Peach',
+    heading: 'How to Delete Your Account',
+    lead: 'Three steps inside the app. Read the note below before you start.',
+  }}
+  fa={{
+    title: 'حذف حساب کاربری | حرف‌پیچ',
+    heading: 'حذف حساب کاربری',
+    lead: 'سه مرحله داخل برنامه. پیش از شروع، نکته‌ی زیر را بخوانید.',
+  }}
 >
+  <section class="hp-guide-sec">
   <!-- English -->
-  <article class="hp-guide" data-lang-block="en" lang="en">
-    <p class="hp-intro">
+  <article class="hp-wrap hp-guide" data-lang-block="en" lang="en" dir="ltr">
+    <div class="hp-callout hp-callout-warn"><svg class="hp-callout-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg><p class="hp-intro">
       Deleting your Harf&nbsp;Peach account is <strong>permanent</strong>. All of your
       data — including coins, diamonds and experience (XP) — is erased for good, and your
       username, phone number and linked Google account are released. This cannot be undone.
-    </p>
+    </p></div>
 
     <ol class="hp-steps">
       <li class="hp-step">
+        <div class="hp-step-text">
         <h2>Open your profile</h2>
         <p>
           Open Harf&nbsp;Peach. On the home screen, tap your <strong>profile</strong> — the pill
           at the top-left showing your username and level.
         </p>
+        </div>
         <img
           src="/harfpeach/screenshots/home.jpg"
           alt="Harf Peach home screen with the profile pill highlighted at the top-left"
@@ -35,12 +42,14 @@ const bilingual = {
       </li>
 
       <li class="hp-step">
+        <div class="hp-step-text">
         <h2>Find &ldquo;Delete account&rdquo;</h2>
         <p>
           On the Profile screen, scroll to the very bottom to the
           <strong>&ldquo;حذف حساب کاربری&rdquo;</strong> (Delete account) section, then tap the
           red <strong>Delete account</strong> button.
         </p>
+        </div>
         <img
           src="/harfpeach/screenshots/profile.jpg"
           alt="Harf Peach profile screen with the Delete account button highlighted at the bottom"
@@ -50,12 +59,14 @@ const bilingual = {
       </li>
 
       <li class="hp-step">
+        <div class="hp-step-text">
         <h2>Confirm deletion</h2>
         <p>
           A confirmation dialog appears. Tap <strong>&ldquo;حذف حساب&rdquo;</strong> (Delete account)
           to permanently delete your account. To keep your account instead, tap
           <strong>&ldquo;انصراف&rdquo;</strong> (Cancel).
         </p>
+        </div>
         <img
           src="/harfpeach/screenshots/delete-dialog.jpg"
           alt="Harf Peach delete-account confirmation dialog with the Delete account button highlighted"
@@ -65,26 +76,28 @@ const bilingual = {
       </li>
     </ol>
 
-    <p class="hp-outro">
+    <div class="hp-callout hp-callout-done"><svg class="hp-callout-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12.5 2.5 2.5L16 9.5"></path></svg><p class="hp-outro">
       Once you confirm, your account is deleted immediately and you are signed out.
-    </p>
+    </p></div>
   </article>
 
   <!-- Persian -->
-  <article class="hp-guide" data-lang-block="fa" lang="fa" dir="rtl">
-    <p class="hp-intro">
+  <article class="hp-wrap hp-guide" data-lang-block="fa" lang="fa" dir="rtl">
+    <div class="hp-callout hp-callout-warn"><svg class="hp-callout-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg><p class="hp-intro">
       حذف حساب کاربری در حرف‌پیچ <strong>همیشگی</strong> است. با حذف حساب، همهٔ اطلاعات شما شامل
       سکه‌ها، الماس‌ها و امتیاز تجربه برای همیشه از بین می‌رود و نام کاربری، شمارهٔ تلفن و حساب
       گوگل شما آزاد می‌شود. این کار قابل بازگشت نیست.
-    </p>
+    </p></div>
 
     <ol class="hp-steps">
       <li class="hp-step">
+        <div class="hp-step-text">
         <h2>باز کردن پروفایل</h2>
         <p>
           برنامهٔ حرف‌پیچ را باز کنید. در صفحهٔ اصلی، روی <strong>پروفایل</strong> خود ضربه بزنید —
           همان کادر بالای صفحه که نام کاربری و سطح شما را نشان می‌دهد.
         </p>
+        </div>
         <img
           src="/harfpeach/screenshots/home.jpg"
           alt="صفحهٔ اصلی حرف‌پیچ با مشخص‌شدن کادر پروفایل در بالای صفحه"
@@ -94,12 +107,14 @@ const bilingual = {
       </li>
 
       <li class="hp-step">
+        <div class="hp-step-text">
         <h2>پیدا کردن «حذف حساب کاربری»</h2>
         <p>
           در صفحهٔ پروفایل، تا پایین صفحه اسکرول کنید تا به بخش
           <strong>«حذف حساب کاربری»</strong> برسید، سپس روی دکمهٔ قرمز
           <strong>«حذف حساب کاربری»</strong> ضربه بزنید.
         </p>
+        </div>
         <img
           src="/harfpeach/screenshots/profile.jpg"
           alt="صفحهٔ پروفایل حرف‌پیچ با مشخص‌شدن دکمهٔ حذف حساب کاربری در پایین صفحه"
@@ -109,11 +124,13 @@ const bilingual = {
       </li>
 
       <li class="hp-step">
+        <div class="hp-step-text">
         <h2>تأیید حذف</h2>
         <p>
           یک پنجرهٔ تأیید باز می‌شود. برای حذف همیشگی حساب، روی <strong>«حذف حساب»</strong> ضربه
           بزنید. اگر می‌خواهید حساب شما بماند، به‌جای آن روی <strong>«انصراف»</strong> ضربه بزنید.
         </p>
+        </div>
         <img
           src="/harfpeach/screenshots/delete-dialog.jpg"
           alt="پنجرهٔ تأیید حذف حساب حرف‌پیچ با مشخص‌شدن دکمهٔ حذف حساب"
@@ -123,91 +140,72 @@ const bilingual = {
       </li>
     </ol>
 
-    <p class="hp-outro">
+    <div class="hp-callout hp-callout-done"><svg class="hp-callout-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12.5 2.5 2.5L16 9.5"></path></svg><p class="hp-outro">
       پس از تأیید، حساب شما بلافاصله حذف می‌شود و از حساب خارج می‌شوید.
-    </p>
+    </p></div>
   </article>
-</Legal>
+  </section>
+</HarfPeachDoc>
 
-<style>
-  .hp-guide {
-    color: var(--text-secondary);
-    line-height: 1.8;
-    font-size: 1rem;
-    margin-top: 1.5rem;
-  }
+<style is:global>
+  .hp-guide-sec { padding-bottom: 96px; }
+  .hp-guide { max-width: 1040px; display: flex; flex-direction: column; gap: 28px; }
+  .hp-guide strong { color: var(--text); font-weight: 700; }
 
-  .hp-intro,
-  .hp-outro {
-    margin-bottom: 1em;
+  .hp-callout {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 24px 28px; border-radius: 24px;
+    font-size: 17px; line-height: 1.85;
   }
-
-  .hp-outro {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--surface-border);
-    color: var(--text-tertiary);
-    font-size: 0.95rem;
-  }
-
-  .hp-guide strong {
-    color: var(--text-primary);
-    font-weight: 600;
-  }
+  [lang="fa"] .hp-callout { line-height: 2; }
+  .hp-callout p { margin: 0; }
+  .hp-callout-icon { flex-shrink: 0; margin-top: 2px; }
+  .hp-callout-warn { background: var(--red-tint); box-shadow: 0 5px 0 var(--red-edge); color: var(--text); }
+  .hp-callout-warn .hp-callout-icon { color: var(--red-ink); }
+  .hp-callout-done { background: var(--green-tint); box-shadow: 0 5px 0 var(--green-edge); color: var(--text); }
+  .hp-callout-done .hp-callout-icon { color: var(--green-ink); }
 
   .hp-steps {
-    counter-reset: step;
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+    counter-reset: step; list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 20px;
   }
-
   .hp-step {
     counter-increment: step;
-    position: relative;
-    padding-inline-start: 3rem;
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr) 240px;
+    gap: 28px;
+    align-items: start;
+    padding: 32px;
+    border-radius: 28px;
+    background: var(--surface);
+    box-shadow: 0 6px 0 var(--shadow);
   }
-
+  /* The step number as one of the game's letter tiles. */
   .hp-step::before {
-    content: counter(step);
-    position: absolute;
-    inset-inline-start: 0;
-    top: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-from) 0%, var(--accent-to) 100%);
-    color: var(--bg-base);
-    font-weight: 700;
-    font-size: 0.9rem;
-    line-height: 1;
+    content: counter(step, decimal);
+    width: 64px; height: 64px; border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px; font-weight: 800; color: #FFFFFF;
+    background: #FF7A57; box-shadow: 0 5px 0 #D9502F;
   }
-
-  .hp-step h2 {
-    color: var(--text-primary);
-    font-weight: 600;
-    font-size: 1.2rem;
-    line-height: 2rem;
-    margin: 0 0 0.4em;
-  }
-
-  .hp-step p {
-    margin: 0 0 0.75rem;
-  }
-
+  [lang="fa"] .hp-step::before { content: counter(step, persian); }
+  .hp-step-text { padding-top: 6px; font-size: 17px; line-height: 1.85; color: var(--muted); }
+  [lang="fa"] .hp-step-text { line-height: 2; }
+  .hp-step h2 { font-size: 24px; line-height: 1.4; font-weight: 800; color: var(--text); margin: 0 0 10px; }
+  .hp-step p { margin: 0; }
   .hp-screenshot {
-    display: block;
-    width: 100%;
-    max-width: 260px;
-    height: auto;
-    border-radius: 1.25rem;
-    border: 1px solid var(--surface-border);
-    margin-top: 0.75rem;
+    width: 100%; height: auto; border-radius: 22px;
+    background: var(--band);
+    box-shadow: 0 0 0 1px var(--border), 0 6px 0 var(--shadow);
+  }
+
+  @media (max-width: 900px) {
+    .hp-guide-sec { padding-bottom: 64px; }
+    .hp-callout { padding: 20px; font-size: 16px; }
+    .hp-step { grid-template-columns: 52px minmax(0, 1fr); gap: 16px 18px; padding: 22px; border-radius: 24px; }
+    .hp-step::before { width: 52px; height: 52px; border-radius: 16px; font-size: 24px; }
+    .hp-step-text { padding-top: 4px; font-size: 16px; }
+    .hp-step h2 { font-size: 20px; }
+    .hp-screenshot { grid-column: 1 / -1; max-width: 300px; justify-self: center; }
   }
 </style>

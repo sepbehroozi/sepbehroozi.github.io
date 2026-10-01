@@ -1,0 +1,54 @@
+---
+type Page = 'privacy' | 'terms' | 'delete';
+interface Props {
+  /** Page this footer sits on, marked aria-current. */
+  current?: Page;
+  /**
+   * Bilingual pages show both label sets (the layout hides the inactive one)
+   * and keep the reader's language when following a link. Otherwise the
+   * footer is Persian-only and links open the Persian version.
+   */
+  bilingual?: boolean;
+}
+const { current, bilingual = false } = Astro.props;
+
+const links: { id: Page; href: string; fa: string; en: string; faint?: boolean }[] = [
+  { id: 'privacy', href: '/harfpeach/privacy_policy', fa: 'حریم خصوصی', en: 'Privacy Policy' },
+  { id: 'terms', href: '/harfpeach/terms_of_service', fa: 'شرایط استفاده', en: 'Terms of Service' },
+  { id: 'delete', href: '/harfpeach/delete_account', fa: 'حذف حساب کاربری', en: 'Delete account', faint: true },
+];
+---
+<footer class="hp-footer">
+  <div class="hp-wrap hp-foot">
+    <a href="/harfpeach" class="hp-foot-brand">
+      <img src="/harfpeach/icon.webp" width="36" height="36" alt="" loading="lazy" />
+      {bilingual ? (
+        <>
+          <span data-lang-block="fa">© ۱۴۰۵ حرف‌پیچ</span>
+          <span data-lang-block="en" lang="en">© 2026 Harf Peach</span>
+        </>
+      ) : (
+        <span>© ۱۴۰۵ حرف‌پیچ</span>
+      )}
+    </a>
+    <nav class="hp-foot-links" aria-label={bilingual ? 'Legal' : 'اطلاعات حقوقی'}>
+      {links.map((l) => (
+        <a
+          href={bilingual ? l.href : `${l.href}?lang=fa`}
+          class={l.faint ? 'hp-foot-faint' : undefined}
+          aria-current={current === l.id ? 'page' : undefined}
+          data-keep-lang={bilingual ? '' : undefined}
+        >
+          {bilingual ? (
+            <>
+              <span data-lang-block="fa">{l.fa}</span>
+              <span data-lang-block="en" lang="en">{l.en}</span>
+            </>
+          ) : (
+            l.fa
+          )}
+        </a>
+      ))}
+    </nav>
+  </div>
+</footer>
