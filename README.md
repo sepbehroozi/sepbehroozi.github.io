@@ -51,6 +51,7 @@ The following URLs are referenced from shipped mobile apps and must continue to 
 
 - `/altstore/alt_source.json` — AltStore source for Treffen
 - `/altstore/Treffen/*.ipa` — Treffen build artifacts
+- `/papersafe/privacy_policy`, `/papersafe/terms_of_service`, `/papersafe/support`
 - `/sepool/privacy_policy`, `/sepool/terms_of_service`
 - `/tmforwarder/privacy_policy`, `/tmforwarder/terms_of_service`, `/tmforwarder/power-optimization-settings`
 
