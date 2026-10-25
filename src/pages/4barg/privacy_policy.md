@@ -17,6 +17,10 @@ The Application collects information when you download and use it. This informat
 *   The time spent on the Application
 *   your mobile operating system you use
 
+**Fair Play and Cheat Detection**
+
+To protect the integrity of the game and other users, the Service Provider processes gameplay and account information — such as game results, coin transactions and transfers between accounts, user ID, device ID, IP address, and reports submitted by other users — to detect and investigate cheating, hacks, exploits, and other abuse of the Application. This may involve review by the Application's moderators or administrators as well as automated detection systems. Where abuse is confirmed, the Service Provider may remove coins, games, experience, or achievements from the account, or suspend or permanently ban it, as described in the Terms & Conditions. Information related to a confirmed violation may be retained for as long as necessary to enforce a ban and prevent repeat abuse, even after other account data has been deleted. If you believe a decision was made in error, contact the Service Provider at efromfb@gmail.com or through the support section within the Application.
+
 **Cookies and tracking technologies**
 
 The Application or its third-party SDKs may use cookies, SDKs, pixels, and similar technologies to support functionality, analytics, or service delivery. Where required by applicable law, the Service Provider will obtain consent before using non-essential tracking technologies.

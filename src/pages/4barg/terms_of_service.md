@@ -20,9 +20,7 @@ The Service Provider retains all intellectual property rights in the Application
 
 **Termination**
 
-The Service Provider may suspend your access to the Application or services if you materially breach these Terms. The Service Provider will provide you with written notice of the breach and, where the breach is capable of cure, you will have 14 days from receipt of notice to remedy the breach. If you fail to cure the breach within that period, the Service Provider may terminate your access.
-
-The Service Provider may suspend or terminate your access immediately without notice if you violate applicable law, infringe intellectual property rights, or engage in activity that could cause harm to other users or the Service Provider.
+The Service Provider may suspend or terminate your access to the Application or services, without prior notice, if you breach these Terms, violate applicable law, infringe intellectual property rights, or engage in activity that could cause harm to other users or the Service Provider.
 
 Upon termination, your right to use the Application will end and you must delete all copies from your devices.
 
@@ -72,6 +70,22 @@ When a report or moderation review confirms that a user has posted content or en
 *   **Third confirmed violation:** the account is permanently banned. A permanent ban is not lifted automatically, and any in-game virtual currency (coins) associated with the account is forfeited.
 
 Temporary suspensions expire automatically at the end of the 72-hour period, but the violation count is retained, so subsequent violations continue to count toward a permanent ban. The Service Provider may, following review, lift a suspension or reset a user's violation count (for example, where a report is found to be unjustified). Permanent bans are reviewed only by the Service Provider and are not reversed automatically; affected users may contact the Service Provider at efromfb@gmail.com to request review.
+
+**Fair Play: Cheating, Exploits and Abuse of Game Features**
+
+You agree to play the Application only as intended. You must not use, develop, or distribute any hack, cheat, bot, modified client, script, workaround, exploit of a bug or vulnerability in the Application or its game servers, or any other unauthorized method to gain coins, win games, or otherwise gain an unfair advantage, and you must not otherwise abuse the Application's features (for example, by colluding with other players or using multiple accounts to manipulate game results or transfer coins).
+
+Such activity may be identified by the Application's moderators or administrators, by automated detection systems, or through reports from other users. Where the Service Provider determines that a user has engaged in such activity:
+
+*   Any games won and any coins obtained through the hack, workaround, or exploit will be removed from the offending user's account, and the results of the affected games may be voided.
+*   The offending user's account may be permanently banned, even for a first violation.
+*   Repeated violations, or any use of an exploit or hack to obtain coins or to abuse the Application, may result in a permanent ban of the account. In that case, any coins, experience, levels, achievements, or other progress earned in the Application by that account may be removed.
+
+Buying, selling, or trading game accounts or coins — including colluding with another user to transfer coins between accounts in exchange for money or anything else of value — is prohibited. Where such a trade is identified, all accounts involved (both the seller's and the buyer's) will be permanently banned.
+
+These measures may be taken immediately and without prior notice, and they apply in addition to the suspension policy described under "Enforcement and Account Suspension". Coins and other in-game items have no real-world monetary value, and to the extent permitted by applicable law, no refund or compensation is owed for coins, progress, or achievements removed under this section. If you believe a decision under this section was made in error, you may request review by contacting the Service Provider at efromfb@gmail.com or through the support (contact us) section within the Application.
+
+If you discover a bug or exploit, please report it to the Service Provider at efromfb@gmail.com or through the support section within the Application instead of using it.
 
 The Service Provider may review reported content, request additional information where necessary, remove or restrict access to content, and take action against the responsible account where appropriate. Users affected by moderation decisions may contact the Service Provider at efromfb@gmail.com to request further review. The Service Provider will respond to appeals within a reasonable period and provide the reasons for any upheld moderation decision, subject to applicable law.
 
