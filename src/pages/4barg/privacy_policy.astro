@@ -1,0 +1,21 @@
+---
+import Legal from '../../layouts/Legal.astro';
+import { compiledContent as enContent } from '../../legal/4barg/privacy_policy.en.md';
+import { compiledContent as faContent } from '../../legal/4barg/privacy_policy.fa.md';
+
+const enHtml = await enContent();
+const faHtml = await faContent();
+---
+<Legal
+  title="سیاست حفظ حریم خصوصی — چهاربرگ"
+  description="Privacy policy for the 4Barg mobile application."
+  bilingual={{
+    defaultLang: 'fa',
+    backHref: '/4barg',
+    en: { title: 'Privacy Policy — 4Barg', heading: 'Privacy Policy — 4Barg', back: '← 4Barg' },
+    fa: { title: 'سیاست حفظ حریم خصوصی — چهاربرگ', heading: 'سیاست حفظ حریم خصوصی — چهاربرگ', back: '→ چهاربرگ' },
+  }}
+>
+  <article class="legal-prose" data-lang-block="fa" lang="fa" set:html={faHtml} />
+  <article class="legal-prose" data-lang-block="en" lang="en" set:html={enHtml} />
+</Legal>

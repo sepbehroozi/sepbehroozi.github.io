@@ -7,19 +7,22 @@ interface Props {
   description?: string;
   ogType?: 'website' | 'article';
   backdropVariant?: 'orbs' | 'grid';
+  /** Language the page is served in; Persian pages render right-to-left. */
+  lang?: 'en' | 'fa';
 }
 const {
   title = 'Sep Behroozi',
   description = 'Software engineer building mobile apps and developer tooling.',
   ogType = 'website',
   backdropVariant = 'orbs',
+  lang = 'en',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImage = new URL('/og-image.png', Astro.site).toString();
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang} dir={lang === 'fa' ? 'rtl' : 'ltr'} data-lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -1,0 +1,21 @@
+---
+import Legal from '../../layouts/Legal.astro';
+import { compiledContent as enContent } from '../../legal/4barg/terms_of_service.en.md';
+import { compiledContent as faContent } from '../../legal/4barg/terms_of_service.fa.md';
+
+const enHtml = await enContent();
+const faHtml = await faContent();
+---
+<Legal
+  title="شرایط و ضوابط — چهاربرگ"
+  description="Terms and conditions for the 4Barg mobile application."
+  bilingual={{
+    defaultLang: 'fa',
+    backHref: '/4barg',
+    en: { title: 'Terms & Conditions — 4Barg', heading: 'Terms & Conditions — 4Barg', back: '← 4Barg' },
+    fa: { title: 'شرایط و ضوابط — چهاربرگ', heading: 'شرایط و ضوابط — چهاربرگ', back: '→ چهاربرگ' },
+  }}
+>
+  <article class="legal-prose" data-lang-block="fa" lang="fa" set:html={faHtml} />
+  <article class="legal-prose" data-lang-block="en" lang="en" set:html={enHtml} />
+</Legal>

@@ -1,4 +1,5 @@
 ---
+import '@fontsource-variable/vazirmatn';
 import '../styles/global.css';
 interface Frontmatter {
   title?: string;
@@ -19,8 +20,10 @@ interface Props {
    * browser language, then English), and the whole page — heading, back link,
    * tab title, and text direction — switches with it. The page is expected to
    * provide the content itself as two `[data-lang-block]` articles in the slot.
+   * With `defaultLang: 'fa'`, Persian is shown unless `?lang=en` asks for
+   * English. `backHref` is where the back link goes (default `/`).
    */
-  bilingual?: { en: LangStrings; fa: LangStrings };
+  bilingual?: { en: LangStrings; fa: LangStrings; defaultLang?: 'en' | 'fa'; backHref?: string };
 }
 const props = Astro.props;
 const { title, description } = props.frontmatter ?? props;
@@ -31,9 +34,18 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const langTitles = bilingual
   ? { en: bilingual.en.title, fa: bilingual.fa.title }
   : null;
+const defaultLang = bilingual?.defaultLang ?? null;
+const backHref = bilingual?.backHref ?? '/';
+// Render the default language on the server, so the page is right before
+// (and without) script.
+const initialLang = defaultLang ?? 'en';
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang={initialLang}
+  dir={initialLang === 'fa' ? 'rtl' : 'ltr'}
+  data-lang={defaultLang ?? undefined}
+>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -51,16 +63,17 @@ const langTitles = bilingual
     <meta name="twitter:description" content={desc} />
     <meta name="twitter:image" content={new URL('/og-image.png', Astro.site).toString()} />
     {bilingual && (
-      <script is:inline define:vars={{ langTitles }}>
+      <script is:inline define:vars={{ langTitles, defaultLang }}>
         // Decide the language before first paint so the correct content shows
-        // without a flash. `?lang=` wins; otherwise fall back to the browser
-        // language (Persian → fa), then English.
+        // without a flash. `?lang=` wins; otherwise the page's default
+        // language, or failing that the browser language (Persian → fa),
+        // then English.
         (function () {
           try {
             var params = new URLSearchParams(window.location.search);
             var lang = params.get('lang');
             if (lang !== 'en' && lang !== 'fa') {
-              lang = (navigator.language || '').toLowerCase().indexOf('fa') === 0 ? 'fa' : 'en';
+              lang = defaultLang || ((navigator.language || '').toLowerCase().indexOf('fa') === 0 ? 'fa' : 'en');
             }
             var root = document.documentElement;
             root.setAttribute('data-lang', lang);
@@ -83,8 +96,8 @@ const langTitles = bilingual
       {bilingual ? (
         <>
           <div class="legal-topbar">
-            <a href="/" class="label-eyebrow legal-back" data-lang-block="en">{bilingual.en.back}</a>
-            <a href="/" class="label-eyebrow legal-back" data-lang-block="fa">{bilingual.fa.back}</a>
+            <a href={backHref} class="label-eyebrow legal-back" data-lang-block="en" data-keep-lang>{bilingual.en.back}</a>
+            <a href={backHref} class="label-eyebrow legal-back" data-lang-block="fa" data-keep-lang>{bilingual.fa.back}</a>
             <button type="button" class="lang-toggle" data-lang-toggle aria-label="Switch language">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
                 <circle cx="12" cy="12" r="9" />
@@ -114,10 +127,21 @@ const langTitles = bilingual
     </main>
 
     {bilingual && (
-      <script is:inline define:vars={{ langTitles }}>
+      <script is:inline define:vars={{ langTitles, defaultLang }}>
         // Wire the language toggle: flip the language, update direction, tab
         // title, and the URL (`?lang=`) so the current view is shareable.
+        // Links marked data-keep-lang carry the language along (left off when
+        // it is the default).
         (function () {
+          function syncLinks(lang) {
+            document.querySelectorAll('a[data-keep-lang]').forEach(function (a) {
+              var url = new URL(a.getAttribute('href'), window.location.href);
+              if (defaultLang && lang === defaultLang) url.searchParams.delete('lang');
+              else url.searchParams.set('lang', lang);
+              a.setAttribute('href', url.pathname + url.search + url.hash);
+            });
+          }
+          syncLinks(document.documentElement.getAttribute('data-lang') === 'fa' ? 'fa' : 'en');
           function apply(lang) {
             var root = document.documentElement;
             root.setAttribute('data-lang', lang);
@@ -127,6 +151,7 @@ const langTitles = bilingual
             var url = new URL(window.location.href);
             url.searchParams.set('lang', lang);
             window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+            syncLinks(lang);
           }
           document.querySelectorAll('[data-lang-toggle]').forEach(function (btn) {
             btn.addEventListener('click', function () {
@@ -182,6 +207,12 @@ const langTitles = bilingual
          JavaScript disabled) shows English and hides Persian. */
       html:not([data-lang="fa"]) [data-lang-block="fa"] { display: none; }
       html[data-lang="fa"] [data-lang-block="en"] { display: none; }
+
+      html[data-lang="fa"] body { font-family: 'Vazirmatn Variable', var(--font-sans); }
+      html[data-lang="fa"] .legal-prose { line-height: 2; }
+      /* The eyebrow style is monospace and letter-spaced, which pulls Persian
+         letters apart. */
+      html[data-lang="fa"] .legal-back { font-family: 'Vazirmatn Variable', var(--font-sans); letter-spacing: 0; font-size: 0.85rem; }
 
       /* Right-to-left list bullets sit on the correct side in Persian. */
       html[data-lang="fa"] .legal-prose ul,
