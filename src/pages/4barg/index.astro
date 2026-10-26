@@ -1,11 +1,30 @@
 ---
+import '@fontsource-variable/vazirmatn';
 import Layout from '../../layouts/Layout.astro';
 
-const title = "4Barg — Traditional Persian Card Game";
+const titles = {
+  en: '4Barg — Traditional Persian Card Game',
+  fa: 'چهاربرگ — بازی کارتی سنتی ایرانی',
+};
 const description = "Play the classic Persian card game 4Barg (چهار برگ) online with players worldwide or offline against smart AI bots. Features real-time voice chat, lobbies, and global leaderboards.";
 ---
 
-<Layout title={title} description={description}>
+<Layout title={titles.fa} description={description} lang="fa">
+  <script is:inline slot="head" define:vars={{ titles }}>
+    // Persian is the default; `?lang=en` switches to English (`?lang=fa`
+    // asks for Persian explicitly). Decided before first paint, so the right
+    // language shows without a flash.
+    (function () {
+      try {
+        var lang = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'fa';
+        var root = document.documentElement;
+        root.setAttribute('data-lang', lang);
+        root.lang = lang;
+        root.dir = lang === 'fa' ? 'rtl' : 'ltr';
+        document.title = titles[lang];
+      } catch (e) {}
+    })();
+  </script>
   <main class="page-container relative z-10">
     <!-- Back to portfolio button -->
     <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -13,27 +32,38 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
         </svg>
-        Back to Portfolio
+        <span data-lang-block="en">Back to Portfolio</span><span data-lang-block="fa">بازگشت به نمونه‌کارها</span>
       </a>
-      <span class="text-xs font-semibold uppercase tracking-widest text-[#6b8f8a] tabular-nums">Version 2.2.2</span>
+      <div class="flex items-center gap-4">
+        <span class="text-xs font-semibold uppercase tracking-widest text-[#6b8f8a] tabular-nums"><span data-lang-block="en">Version 2.2.2</span><span data-lang-block="fa">نسخه‌ی ۲.۲.۲</span></span>
+        <button type="button" class="lang-toggle" data-lang-toggle>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3z" />
+          </svg>
+          <span data-lang-block="fa" lang="en">English</span>
+          <span data-lang-block="en" lang="fa">فارسی</span>
+        </button>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center" id="section-hero">
       <!-- Left content column -->
-      <div class="lg:col-span-7 space-y-8 text-left">
+      <div class="lg:col-span-7 space-y-8">
         <div class="flex items-center space-x-4">
-          <img src="/4barg/logo.png" alt="4Barg Logo" class="w-16 h-16 rounded-2xl shadow-xl border-2 border-[#ffd65a] p-0.5 bg-[#030d0b]" id="hero-logo-img" />
+          <img src="/4barg/logo.png" alt="4Barg Logo" data-alt-en="4Barg Logo" data-alt-fa="لوگوی چهاربرگ" class="w-16 h-16 rounded-2xl shadow-xl border-2 border-[#ffd65a] p-0.5 bg-[#030d0b]" id="hero-logo-img" />
           <div>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-1">
               4Barg <span class="gold-text-gradient font-bold text-3xl md:text-4xl lg:text-5xl block md:inline md:ml-2">چهار برگ</span>
             </h1>
-            <p class="text-xs uppercase tracking-widest text-[#ffd65a] font-semibold">Traditional Persian Card Game</p>
+            <p class="text-xs uppercase tracking-widest text-[#ffd65a] font-semibold"><span data-lang-block="en">Traditional Persian Card Game</span><span data-lang-block="fa">بازی کارتی سنتی ایرانی</span></p>
           </div>
         </div>
 
         <p class="text-lg md:text-xl text-[#a2beba] leading-relaxed max-w-2xl">
-          The classic card game, rebuilt from the ground up for modern devices. Challenge players globally in real-time rooms, coordinate tactics with in-game voice chat, or play offline anywhere against our smart AI.
+          <span data-lang-block="en">The classic card game, rebuilt from the ground up for modern devices. Challenge players globally in real-time rooms, coordinate tactics with in-game voice chat, or play offline anywhere against our smart AI.</span><span data-lang-block="fa">بازی کارتی کلاسیک، از نو برای گوشی‌های امروزی ساخته شده است. در اتاق‌های زنده با بازیکنان سراسر دنیا رقابت کنید، با گفت‌وگوی صوتی درون بازی با یارتان هماهنگ شوید، یا هر جا که هستید به‌صورت آفلاین مقابل هوش مصنوعی بازی کنید.</span>
         </p>
 
         <!-- Download CTA Buttons -->
@@ -45,12 +75,14 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
 
           <!-- CafeBazaar -->
           <a href="https://cafebazaar.ir/app/com.sharif.a4Barg" target="_blank" rel="noopener noreferrer" class="bazaar-img-link" id="cta-cafebazaar">
-            <img src="/4barg/get-cafebazaar-en.png" alt="Get it on CafeBazaar" class="h-[52px] w-auto" />
+            <img src="/4barg/get-cafebazaar-en.png" alt="Get it on CafeBazaar" class="h-[52px] w-auto" data-lang-block="en" />
+            <img src="/4barg/get-cafebazaar-fa.png" alt="دریافت از بازار" class="h-[52px] w-auto" data-lang-block="fa" />
           </a>
 
           <!-- Myket -->
           <a href="https://myket.ir/app/com.sharif.a4Barg" target="_blank" rel="noopener noreferrer" class="myket-img-link" id="cta-myket">
-            <img src="/4barg/download-myket.svg" alt="Download via Myket" class="h-[52px] w-auto" />
+            <img src="/4barg/download-myket.svg" alt="Download via Myket" class="h-[52px] w-auto" data-lang-block="en" />
+            <img src="/4barg/download-myket-fa.png" alt="دریافت از مایکت" class="h-[52px] w-auto" data-lang-block="fa" />
           </a>
         </div>
       </div>
@@ -64,40 +96,40 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
         <div class="card-fan-container relative w-64 h-96 cursor-pointer" id="interactive-card-fan">
           <!-- Card back (base) -->
           <div class="fan-card card-back" style="--index: 0;">
-            <img src="/4barg/card_back.png" alt="Card Back" class="w-full h-full object-cover rounded-xl shadow-2xl border border-emerald-700/50" />
+            <img src="/4barg/card_back.png" alt="Card Back" data-alt-en="Card Back" data-alt-fa="پشت کارت" class="w-full h-full object-cover rounded-xl shadow-2xl border border-emerald-700/50" />
           </div>
 
           <!-- Hearts King -->
           <div class="fan-card card-face" style="--index: 1;">
-            <img src="/4barg/cards/hearts_king.png" alt="King of Hearts" class="w-full h-full object-contain rounded-xl shadow-2xl" />
+            <img src="/4barg/cards/hearts_king.png" alt="King of Hearts" data-alt-en="King of Hearts" data-alt-fa="شاه دل" class="w-full h-full object-contain rounded-xl shadow-2xl" />
           </div>
 
           <!-- Ace of Clubs -->
           <div class="fan-card card-face" style="--index: 2;">
-            <img src="/4barg/cards/clubs_ace.png" alt="Ace of Clubs" class="w-full h-full object-contain rounded-xl shadow-2xl" />
+            <img src="/4barg/cards/clubs_ace.png" alt="Ace of Clubs" data-alt-en="Ace of Clubs" data-alt-fa="تک خاج" class="w-full h-full object-contain rounded-xl shadow-2xl" />
           </div>
 
           <!-- 10 of Diamonds -->
           <div class="fan-card card-face" style="--index: 3;">
-            <img src="/4barg/cards/diamonds_10.png" alt="10 of Diamonds" class="w-full h-full object-contain rounded-xl shadow-2xl" />
+            <img src="/4barg/cards/diamonds_10.png" alt="10 of Diamonds" data-alt-en="10 of Diamonds" data-alt-fa="ده خشت" class="w-full h-full object-contain rounded-xl shadow-2xl" />
           </div>
 
           <!-- Jack of Spades -->
           <div class="fan-card card-face" style="--index: 4;">
-            <img src="/4barg/cards/spades_jack.png" alt="Jack of Spades" class="w-full h-full object-contain rounded-xl shadow-2xl" />
+            <img src="/4barg/cards/spades_jack.png" alt="Jack of Spades" data-alt-en="Jack of Spades" data-alt-fa="سرباز پیک" class="w-full h-full object-contain rounded-xl shadow-2xl" />
           </div>
         </div>
 
-        <p class="absolute bottom-0 text-center text-xs text-[#6b8f8a] italic pointer-events-none">Hover or tap cards to deal them</p>
+        <p class="absolute bottom-0 text-center text-xs text-[#6b8f8a] italic pointer-events-none"><span data-lang-block="en">Hover or tap cards to deal them</span><span data-lang-block="fa">برای پخش کارت‌ها، نشانگر را روی آن‌ها ببرید یا لمسشان کنید</span></p>
       </div>
     </section>
 
     <!-- Key Features Section -->
     <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#1d5c50]/30" id="section-features">
       <div class="text-center mb-16 space-y-4">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">Full-Featured Experience</h2>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white"><span data-lang-block="en">Full-Featured Experience</span><span data-lang-block="fa">تجربه‌ای کامل</span></h2>
         <div class="w-20 h-1 bg-gradient-to-r from-[#ffd65a] to-[#ffe4b0] mx-auto rounded-full"></div>
-        <p class="text-[#a2beba] max-w-2xl mx-auto">Re-engineered with modern infrastructure to deliver the best competitive Persian card game experience.</p>
+        <p class="text-[#a2beba] max-w-2xl mx-auto"><span data-lang-block="en">Re-engineered with modern infrastructure to deliver the best competitive Persian card game experience.</span><span data-lang-block="fa">با زیرساختی مدرن از نو ساخته شده تا بهترین تجربه‌ی رقابتی بازی کارتی ایرانی را ارائه دهد.</span></p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -108,9 +140,9 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
               <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors">Global Matchmaking</h3>
+          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors"><span data-lang-block="en">Global Matchmaking</span><span data-lang-block="fa">بازی با بازیکنان سراسر دنیا</span></h3>
           <p class="text-[#a2beba] text-sm leading-relaxed">
-            Create or join 2-player (1v1) or 4-player (2v2 team game) online rooms. Play against friends or match with players worldwide instantly.
+            <span data-lang-block="en">Create or join 2-player (1v1) or 4-player (2v2 team game) online rooms. Play against friends or match with players worldwide instantly.</span><span data-lang-block="fa">اتاق آنلاین دونفره (یک به یک) یا چهارنفره (بازی تیمی دو به دو) بسازید یا به آن بپیوندید. با دوستانتان بازی کنید یا فوراً با بازیکنانی از سراسر دنیا هم‌بازی شوید.</span>
           </p>
         </div>
 
@@ -121,9 +153,9 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors">Real-time Voice Chat</h3>
+          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors"><span data-lang-block="en">Real-time Voice Chat</span><span data-lang-block="fa">گفت‌وگوی صوتی زنده</span></h3>
           <p class="text-[#a2beba] text-sm leading-relaxed">
-            Coordinate strategies with your teammate or chat with opponents live during match play, powered by premium LiveKit voice technology.
+            <span data-lang-block="en">Coordinate strategies with your teammate or chat with opponents live during match play, powered by premium LiveKit voice technology.</span><span data-lang-block="fa">در طول بازی با یارتان نقشه بکشید یا با حریفان به‌صورت زنده گفت‌وگو کنید؛ با فناوری صوتی LiveKit.</span>
           </p>
         </div>
 
@@ -134,9 +166,9 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors">Offline Smart Bots</h3>
+          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors"><span data-lang-block="en">Offline Smart Bots</span><span data-lang-block="fa">ربات‌های هوشمند آفلاین</span></h3>
           <p class="text-[#a2beba] text-sm leading-relaxed">
-            No internet? No problem. Train or relax offline with our state-of-the-art AI. The game replaces leaving players with AI bots in 4p matches automatically.
+            <span data-lang-block="en">No internet? No problem. Train or relax offline with our state-of-the-art AI. The game replaces leaving players with AI bots in 4p matches automatically.</span><span data-lang-block="fa">اینترنت ندارید؟ مشکلی نیست. با هوش مصنوعی پیشرفته‌ی بازی به‌صورت آفلاین تمرین کنید یا سرگرم شوید. در بازی‌های چهارنفره، اگر بازیکنی بازی را ترک کند، ربات به‌طور خودکار جایش را می‌گیرد.</span>
           </p>
         </div>
 
@@ -148,9 +180,9 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
               <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.114 1.5 2.085v3.3c0 1.013-.679 1.87-1.637 2.1l-1.777.426a12.09 12.09 0 01-1.011.176V15c0-.967-.35-1.89-.986-2.586l-2.617-2.871A2.25 2.25 0 0115 8.012V7.5a2.25 2.25 0 012.25-2.25h1.5A2.25 2.25 0 0121 7.5v1.011z" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors">Friends & Private Chats</h3>
+          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors"><span data-lang-block="en">Friends & Private Chats</span><span data-lang-block="fa">دوستان و گفت‌وگوی خصوصی</span></h3>
           <p class="text-[#a2beba] text-sm leading-relaxed">
-            Manage your friends list, block users, send direct messages, and invite online friends straight into your current matchmaking game room.
+            <span data-lang-block="en">Manage your friends list, block users, send direct messages, and invite online friends straight into your current matchmaking game room.</span><span data-lang-block="fa">فهرست دوستانتان را مدیریت کنید، کاربران را مسدود کنید، پیام مستقیم بفرستید و دوستان آنلاین را مستقیم به اتاق بازی فعلی‌تان دعوت کنید.</span>
           </p>
         </div>
 
@@ -161,9 +193,9 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
               <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 18.97a5.969 5.969 0 01-.774-2.614 7.215 7.215 0 01-.136-.356C3.03 14.556 3 12 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors">Global Lobby Chat</h3>
+          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors"><span data-lang-block="en">Global Lobby Chat</span><span data-lang-block="fa">گفت‌وگو در لابی</span></h3>
           <p class="text-[#a2beba] text-sm leading-relaxed">
-            Hang out in the central lobby, chat with players globally, customize parameters (target scores: 32, 62, 122), and plan the next set.
+            <span data-lang-block="en">Hang out in the central lobby, chat with players globally, customize parameters (target scores: 32, 62, 122), and plan the next set.</span><span data-lang-block="fa">در لابی اصلی بمانید، با بازیکنان سراسر دنیا گفت‌وگو کنید، تنظیمات بازی (امتیاز هدف: ۳۲، ۶۲، ۱۲۲) را انتخاب کنید و دست بعدی را برنامه‌ریزی کنید.</span>
           </p>
         </div>
 
@@ -174,9 +206,9 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.251.11a3.371 3.371 0 003.498 0L13 15.012m-3-5.636l.251-.11a3.371 3.371 0 003.498 0L13 9.013M9 10.5h6m-3-4.5v12" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors">VIP Progression & Store</h3>
+          <h3 class="text-xl font-semibold text-white group-hover:text-[#ffd65a] transition-colors"><span data-lang-block="en">VIP Progression & Store</span><span data-lang-block="fa">پیشرفت VIP و فروشگاه</span></h3>
           <p class="text-[#a2beba] text-sm leading-relaxed">
-            Gain coins and XP, level up your profile, and purchase items or VIP subscriptions integrated with CafeBazaar, Myket, and RevenueCat.
+            <span data-lang-block="en">Gain coins and XP, level up your profile, and purchase items or VIP subscriptions integrated with CafeBazaar, Myket, and RevenueCat.</span><span data-lang-block="fa">سکه و تجربه جمع کنید، سطح پروفایلتان را بالا ببرید و آیتم‌ها یا اشتراک VIP را از طریق کافه‌بازار، مایکت و RevenueCat بخرید.</span>
           </p>
         </div>
       </div>
@@ -185,90 +217,90 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
     <!-- Card Scoring & Game Rules -->
     <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#1d5c50]/30" id="section-rules">
       <div class="text-center mb-16 space-y-4">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">How to Score Points</h2>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white"><span data-lang-block="en">How to Score Points</span><span data-lang-block="fa">نحوه‌ی امتیازگیری</span></h2>
         <div class="w-20 h-1 bg-gradient-to-r from-[#ffd65a] to-[#ffe4b0] mx-auto rounded-full"></div>
-        <p class="text-[#a2beba] max-w-2xl mx-auto">4Barg points are calculated at the end of each round based on the specific cards collected in your pile.</p>
+        <p class="text-[#a2beba] max-w-2xl mx-auto"><span data-lang-block="en">4Barg points are calculated at the end of each round based on the specific cards collected in your pile.</span><span data-lang-block="fa">امتیازهای چهاربرگ در پایان هر دور بر اساس کارت‌هایی که جمع کرده‌اید حساب می‌شود.</span></p>
       </div>
 
       <!-- Point cards grid -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-center">
         <!-- Jack -->
         <div class="card-point-showcase" id="card-rule-jack">
-          <div class="card-point-badge">+1 Point</div>
+          <div class="card-point-badge"><span data-lang-block="en">+1 Point</span><span data-lang-block="fa">+۱ امتیاز</span></div>
           <div class="rule-playing-card">
-            <img src="/4barg/cards/spades_jack.png" alt="Jack of Spades" class="w-full h-full object-contain" />
+            <img src="/4barg/cards/spades_jack.png" alt="Jack of Spades" data-alt-en="Jack of Spades" data-alt-fa="سرباز پیک" class="w-full h-full object-contain" />
           </div>
           <div class="text-center mt-3">
-            <h4 class="font-bold text-white text-sm">Jack (سرباز)</h4>
-            <p class="text-xs text-[#a2beba] mt-1">Gives 1 point and collects all cards on the table.</p>
+            <h4 class="font-bold text-white text-sm"><span data-lang-block="en">Jack (سرباز)</span><span data-lang-block="fa">سرباز</span></h4>
+            <p class="text-xs text-[#a2beba] mt-1"><span data-lang-block="en">Gives 1 point and collects all cards on the table.</span><span data-lang-block="fa">۱ امتیاز دارد و همه‌ی کارت‌های روی میز را جمع می‌کند.</span></p>
           </div>
         </div>
 
         <!-- Ace -->
         <div class="card-point-showcase" id="card-rule-ace">
-          <div class="card-point-badge">+1 Point</div>
+          <div class="card-point-badge"><span data-lang-block="en">+1 Point</span><span data-lang-block="fa">+۱ امتیاز</span></div>
           <div class="rule-playing-card">
-            <img src="/4barg/cards/clubs_ace.png" alt="Ace of Clubs" class="w-full h-full object-contain" />
+            <img src="/4barg/cards/clubs_ace.png" alt="Ace of Clubs" data-alt-en="Ace of Clubs" data-alt-fa="تک خاج" class="w-full h-full object-contain" />
           </div>
           <div class="text-center mt-3">
-            <h4 class="font-bold text-white text-sm">Ace (تک)</h4>
-            <p class="text-xs text-[#a2beba] mt-1">Each Ace collected in your pile adds 1 point.</p>
+            <h4 class="font-bold text-white text-sm"><span data-lang-block="en">Ace (تک)</span><span data-lang-block="fa">تک</span></h4>
+            <p class="text-xs text-[#a2beba] mt-1"><span data-lang-block="en">Each Ace collected in your pile adds 1 point.</span><span data-lang-block="fa">هر تکی که جمع کنید ۱ امتیاز دارد.</span></p>
           </div>
         </div>
 
         <!-- 10 of Diamonds -->
         <div class="card-point-showcase" id="card-rule-diamonds10">
-          <div class="card-point-badge">+3 Points</div>
+          <div class="card-point-badge"><span data-lang-block="en">+3 Points</span><span data-lang-block="fa">+۳ امتیاز</span></div>
           <div class="rule-playing-card">
-            <img src="/4barg/cards/diamonds_10.png" alt="10 of Diamonds" class="w-full h-full object-contain" />
+            <img src="/4barg/cards/diamonds_10.png" alt="10 of Diamonds" data-alt-en="10 of Diamonds" data-alt-fa="ده خشت" class="w-full h-full object-contain" />
           </div>
           <div class="text-center mt-3">
-            <h4 class="font-bold text-white text-sm">10 of Diamonds</h4>
-            <p class="text-xs text-[#a2beba] mt-1">The most valuable card. Adds 3 points to your score.</p>
+            <h4 class="font-bold text-white text-sm"><span data-lang-block="en">10 of Diamonds</span><span data-lang-block="fa">ده خشت</span></h4>
+            <p class="text-xs text-[#a2beba] mt-1"><span data-lang-block="en">The most valuable card. Adds 3 points to your score.</span><span data-lang-block="fa">باارزش‌ترین کارت؛ ۳ امتیاز به امتیازتان اضافه می‌کند.</span></p>
           </div>
         </div>
 
         <!-- 2 of Clubs -->
         <div class="card-point-showcase" id="card-rule-clubs2">
-          <div class="card-point-badge">+2 Points</div>
+          <div class="card-point-badge"><span data-lang-block="en">+2 Points</span><span data-lang-block="fa">+۲ امتیاز</span></div>
           <div class="rule-playing-card">
-            <img src="/4barg/cards/clubs_2.png" alt="2 of Clubs" class="w-full h-full object-contain" />
+            <img src="/4barg/cards/clubs_2.png" alt="2 of Clubs" data-alt-en="2 of Clubs" data-alt-fa="دو خاج" class="w-full h-full object-contain" />
           </div>
           <div class="text-center mt-3">
-            <h4 class="font-bold text-white text-sm">2 of Clubs</h4>
-            <p class="text-xs text-[#a2beba] mt-1">Gives 2 points. Vital for building club counts.</p>
+            <h4 class="font-bold text-white text-sm"><span data-lang-block="en">2 of Clubs</span><span data-lang-block="fa">دو خاج</span></h4>
+            <p class="text-xs text-[#a2beba] mt-1"><span data-lang-block="en">Gives 2 points. Vital for building club counts.</span><span data-lang-block="fa">۲ امتیاز دارد و در شمار خاج‌ها هم حساب می‌شود.</span></p>
           </div>
         </div>
 
         <!-- Seven Clubs -->
         <div class="card-point-showcase" id="card-rule-sevenclubs">
-          <div class="card-point-badge">+7 Points</div>
+          <div class="card-point-badge"><span data-lang-block="en">+7 Points</span><span data-lang-block="fa">+۷ امتیاز</span></div>
           <div class="rule-playing-card relative flex items-center justify-center bg-[#123c34]/50 border border-emerald-700/60 rounded-xl overflow-hidden aspect-[2.5/3.5]">
             <img src="/4barg/cards/clubs_ace.png" class="absolute w-2/3 h-2/3 object-contain rotate-[-12deg] -translate-x-4 -translate-y-2 opacity-80" />
             <img src="/4barg/cards/clubs_2.png" class="absolute w-2/3 h-2/3 object-contain rotate-[12deg] translate-x-4 translate-y-2" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#030d0b] via-transparent to-transparent"></div>
-            <div class="absolute bottom-2 font-black text-xl text-[#ffd65a] drop-shadow-md">7 Cards</div>
+            <div class="absolute bottom-2 font-black text-xl text-[#ffd65a] drop-shadow-md"><span data-lang-block="en">7 Cards</span><span data-lang-block="fa">۷ کارت</span></div>
           </div>
           <div class="text-center mt-3">
-            <h4 class="font-bold text-white text-sm">Haft Khaj (هفت خاج)</h4>
-            <p class="text-xs text-[#a2beba] mt-1">Gathering 7 or more Club cards gives 7 bonus points.</p>
+            <h4 class="font-bold text-white text-sm"><span data-lang-block="en">Haft Khaj (هفت خاج)</span><span data-lang-block="fa">هفت خاج</span></h4>
+            <p class="text-xs text-[#a2beba] mt-1"><span data-lang-block="en">Gathering 7 or more Club cards gives 7 bonus points.</span><span data-lang-block="fa">جمع کردن ۷ کارت خاج یا بیشتر ۷ امتیاز اضافه دارد.</span></p>
           </div>
         </div>
 
         <!-- Sur -->
         <div class="card-point-showcase" id="card-rule-sur">
-          <div class="card-point-badge">+5 Points</div>
+          <div class="card-point-badge"><span data-lang-block="en">+5 Points</span><span data-lang-block="fa">+۵ امتیاز</span></div>
           <div class="rule-playing-card relative flex items-center justify-center bg-[#123c34]/50 border border-emerald-700/60 rounded-xl overflow-hidden aspect-[2.5/3.5]">
             <div class="absolute inset-0 bg-[#ffd65a]/10 animate-pulse"></div>
             <!-- Clean table icon -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-[#ffd65a] drop-shadow">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 9l6 6m0-6l-6 6m12-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <div class="absolute bottom-2 font-black text-xs text-[#a2beba] uppercase tracking-widest">Table Cleared</div>
+            <div class="absolute bottom-2 font-black text-xs text-[#a2beba] uppercase tracking-widest"><span data-lang-block="en">Table Cleared</span><span data-lang-block="fa">میز خالی</span></div>
           </div>
           <div class="text-center mt-3">
-            <h4 class="font-bold text-white text-sm">Sur (سور)</h4>
-            <p class="text-xs text-[#a2beba] mt-1">Clearing the table gives 5 points (not valid with Jack).</p>
+            <h4 class="font-bold text-white text-sm"><span data-lang-block="en">Sur (سور)</span><span data-lang-block="fa">سور</span></h4>
+            <p class="text-xs text-[#a2beba] mt-1"><span data-lang-block="en">Clearing the table gives 5 points (not valid with Jack).</span><span data-lang-block="fa">خالی کردن میز ۵ امتیاز دارد (با سرباز حساب نمی‌شود).</span></p>
           </div>
         </div>
       </div>
@@ -277,21 +309,21 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
     <!-- App Screenshots Carousel Section -->
     <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#1d5c50]/30" id="section-screenshots">
       <div class="text-center mb-12 space-y-4">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white">App In Action</h2>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white"><span data-lang-block="en">App In Action</span><span data-lang-block="fa">نگاهی به بازی</span></h2>
         <div class="w-20 h-1 bg-gradient-to-r from-[#ffd65a] to-[#ffe4b0] mx-auto rounded-full"></div>
-        <p class="text-[#a2beba] max-w-2xl mx-auto">Explore high-quality screenshots showcasing the game lobbies, shop, chat interface, and immersive playboards.</p>
+        <p class="text-[#a2beba] max-w-2xl mx-auto"><span data-lang-block="en">Explore high-quality screenshots showcasing the game lobbies, shop, chat interface, and immersive playboards.</span><span data-lang-block="fa">تصاویری از لابی‌ها، فروشگاه، گفت‌وگو و میز بازی.</span></p>
       </div>
 
       <!-- Carousel Container -->
       <div class="relative group/carousel max-w-5xl mx-auto">
         <!-- Left/Right controls -->
-        <button class="carousel-control prev-btn" id="carousel-prev" aria-label="Previous Screenshot">
+        <button class="carousel-control prev-btn" id="carousel-prev" aria-label="Previous Screenshot" data-aria-label-en="Previous Screenshot" data-aria-label-fa="تصویر بعدی">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
           </svg>
         </button>
 
-        <button class="carousel-control next-btn" id="carousel-next" aria-label="Next Screenshot">
+        <button class="carousel-control next-btn" id="carousel-next" aria-label="Next Screenshot" data-aria-label-en="Next Screenshot" data-aria-label-fa="تصویر قبلی">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
           </svg>
@@ -301,7 +333,7 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
         <div class="carousel-scroller flex space-x-6 overflow-x-auto py-6 px-4 cursor-grab select-none scroll-smooth" id="screenshot-carousel-scroller">
           {[0, 1, 2, 3, 4, 5, 6, 7].map((num) => (
             <div class="carousel-slide flex-none w-[260px] md:w-[300px] aspect-[9/19.5] rounded-3xl overflow-hidden shadow-2xl border-4 border-[#1d5c50]/40 transition-all duration-300 hover:border-[#ffd65a]/60 hover:scale-[1.02] bg-[#030d0b]" data-index={num}>
-              <img src={`/4barg/screenshots/${num}_APP_IPHONE_65_${num}.png`} alt={`4Barg App Screenshot ${num + 1}`} class="w-full h-full object-cover pointer-events-none" loading="lazy" />
+              <img src={`/4barg/screenshots/${num}_APP_IPHONE_65_${num}.png`} alt={`4Barg App Screenshot ${num + 1}`} data-alt-en={`4Barg App Screenshot ${num + 1}`} data-alt-fa={`تصویر ${(num + 1).toLocaleString('fa-IR')} از برنامه‌ی چهاربرگ`} class="w-full h-full object-cover pointer-events-none" loading="lazy" />
             </div>
           ))}
         </div>
@@ -311,20 +343,91 @@ const description = "Play the classic Persian card game 4Barg (چهار برگ) 
     <!-- Footer -->
     <footer class="max-w-7xl mx-auto px-6 py-12 border-t border-[#1d5c50]/20 text-center space-y-6" id="footer-landing">
       <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-sm text-[#a2beba]">
-        <a href="/4barg/privacy_policy" class="footer-link" id="footer-privacy">Privacy Policy</a>
+        <a href="/4barg/privacy_policy" class="footer-link" id="footer-privacy" data-keep-lang><span data-lang-block="en">Privacy Policy</span><span data-lang-block="fa">حریم خصوصی</span></a>
         <span class="hidden md:inline text-[#6b8f8a]">•</span>
-        <a href="/4barg/terms_of_service" class="footer-link" id="footer-tos">Terms & Conditions</a>
+        <a href="/4barg/terms_of_service" class="footer-link" id="footer-tos" data-keep-lang><span data-lang-block="en">Terms & Conditions</span><span data-lang-block="fa">شرایط و ضوابط</span></a>
         <span class="hidden md:inline text-[#6b8f8a]">•</span>
-        <a href="mailto:efromfb@gmail.com" class="footer-link" id="footer-email">Contact: efromfb@gmail.com</a>
+        <a href="mailto:4bargapp@gmail.com" class="footer-link" id="footer-email"><span data-lang-block="en">Contact:</span><span data-lang-block="fa">تماس:</span> <span dir="ltr">4bargapp@gmail.com</span></a>
         <span class="hidden md:inline text-[#6b8f8a]">•</span>
-        <a href="/4barg/delete_account" class="footer-link opacity-50" id="footer-delete-account">Deleting your account</a>
+        <a href="/4barg/delete_account" class="footer-link opacity-50" id="footer-delete-account"><span data-lang-block="en">Deleting your account</span><span data-lang-block="fa">حذف حساب کاربری</span></a>
       </div>
       <p class="text-xs text-[#6b8f8a]">
-        &copy; {new Date().getFullYear()} Sep Behroozi. 4Barg (چهار برگ) is operated as a free-to-play mobile application.
+        <span data-lang-block="en">&copy; {new Date().getFullYear()} Sharifz. 4Barg (چهار برگ) is operated as a free-to-play mobile application.</span><span data-lang-block="fa">&copy; {new Date().getFullYear()} شریفز. چهاربرگ یک بازی رایگان موبایل است.</span>
       </p>
     </footer>
   </main>
+
+  <script is:inline define:vars={{ titles }}>
+    // Language toggle: flips language, direction, tab title and `?lang=`
+    // (so the view can be shared), swaps translated alt texts and labels, and
+    // carries English over to the legal pages (Persian is their default).
+    (function () {
+      var root = document.documentElement;
+      function sync(lang) {
+        document.querySelectorAll('a[data-keep-lang]').forEach(function (a) {
+          var url = new URL(a.getAttribute('href'), window.location.href);
+          if (lang === 'en') url.searchParams.set('lang', 'en');
+          else url.searchParams.delete('lang');
+          a.setAttribute('href', url.pathname + url.search + url.hash);
+        });
+        ['alt', 'aria-label'].forEach(function (attr) {
+          document.querySelectorAll('[data-' + attr + '-' + lang + ']').forEach(function (el) {
+            el.setAttribute(attr, el.getAttribute('data-' + attr + '-' + lang));
+          });
+        });
+      }
+      function apply(lang) {
+        root.setAttribute('data-lang', lang);
+        root.lang = lang;
+        root.dir = lang === 'fa' ? 'rtl' : 'ltr';
+        document.title = titles[lang];
+        var url = new URL(window.location.href);
+        url.searchParams.set('lang', lang);
+        window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+        sync(lang);
+      }
+      sync(root.getAttribute('data-lang') === 'en' ? 'en' : 'fa');
+      document.querySelectorAll('[data-lang-toggle]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          apply(root.getAttribute('data-lang') === 'en' ? 'fa' : 'en');
+        });
+      });
+    })();
+  </script>
 </Layout>
+
+<style is:global>
+  /* Show only the active language. Persian is the default, so without
+     script the Persian copy shows. */
+  html:not([data-lang="en"]) [data-lang-block="en"] { display: none !important; }
+  html[data-lang="en"] [data-lang-block="fa"] { display: none !important; }
+  html[data-lang="fa"] body { font-family: 'Vazirmatn Variable', var(--font-sans); }
+  /* Persian is never letter-spaced. */
+  html[data-lang="fa"] .tracking-tight,
+  html[data-lang="fa"] .tracking-widest,
+  html[data-lang="fa"] .uppercase { letter-spacing: 0; }
+  /* The back arrow points the reading way. */
+  html[dir="rtl"] #nav-back-portfolio svg { transform: scaleX(-1); margin-right: 0; margin-left: 0.5rem; }
+  html[dir="rtl"] #nav-back-portfolio:hover svg { transform: scaleX(-1) translateX(-0.25rem); }
+
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--surface-border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .lang-toggle:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-from);
+  }
+</style>
 
 <script>
   // Setup Carousel Interactive Buttons

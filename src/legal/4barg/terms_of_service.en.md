@@ -1,12 +1,6 @@
----
-layout: ../../layouts/Legal.astro
-title: Terms & Conditions — 4Barg
-description: Terms and conditions for the 4Barg mobile application.
----
-
 **Terms & Conditions**  
 
-These terms and conditions apply to the 4Barg app for mobile devices, together with any related services operated by Sep Behroozi (collectively, the "Application"). Sep Behroozi is hereby referred to as the "Service Provider".
+These terms and conditions apply to the 4Barg app for mobile devices, together with any related services operated by Sharifz (collectively, the "Application"). Sharifz is hereby referred to as the "Service Provider".
 
 By downloading or using the Application, you agree to these Terms and Conditions. You should read them carefully before using the Application.
 
@@ -51,7 +45,7 @@ The Service Provider reserves the right to:
 
 Content submitted through the Application may be visible to other users or to the public, depending on how the Application functions.
 
-If you believe content violates these Terms, infringes your rights, or is unlawful, you may report it to the Service Provider at efromfb@gmail.com. The report should include enough information for the Service Provider to identify the content, evaluate the complaint, and contact you if follow-up is required.
+If you believe content violates these Terms, infringes your rights, or is unlawful, you may report it to the Service Provider at 4bargapp@gmail.com. The report should include enough information for the Service Provider to identify the content, evaluate the complaint, and contact you if follow-up is required.
 
 Where the Application provides such features, you may also report content, block other users, or mute notifications directly through the Application's interface. The Service Provider will review in-app reports with the same standards described in these Terms.
 
@@ -69,7 +63,7 @@ When a report or moderation review confirms that a user has posted content or en
 *   **Second confirmed violation:** the account is temporarily suspended for a further 72 hours, and the user is warned that another violation will result in a permanent ban.
 *   **Third confirmed violation:** the account is permanently banned. A permanent ban is not lifted automatically, and any in-game virtual currency (coins) associated with the account is forfeited.
 
-Temporary suspensions expire automatically at the end of the 72-hour period, but the violation count is retained, so subsequent violations continue to count toward a permanent ban. The Service Provider may, following review, lift a suspension or reset a user's violation count (for example, where a report is found to be unjustified). Permanent bans are reviewed only by the Service Provider and are not reversed automatically; affected users may contact the Service Provider at efromfb@gmail.com to request review.
+Temporary suspensions expire automatically at the end of the 72-hour period, but the violation count is retained, so subsequent violations continue to count toward a permanent ban. The Service Provider may, following review, lift a suspension or reset a user's violation count (for example, where a report is found to be unjustified). Permanent bans are reviewed only by the Service Provider and are not reversed automatically; affected users may contact the Service Provider at 4bargapp@gmail.com to request review.
 
 **Fair Play: Cheating, Exploits and Abuse of Game Features**
 
@@ -83,11 +77,11 @@ Such activity may be identified by the Application's moderators or administrator
 
 Buying, selling, or trading game accounts or coins — including colluding with another user to transfer coins between accounts in exchange for money or anything else of value — is prohibited. Where such a trade is identified, all accounts involved (both the seller's and the buyer's) will be permanently banned.
 
-These measures may be taken immediately and without prior notice, and they apply in addition to the suspension policy described under "Enforcement and Account Suspension". Coins and other in-game items have no real-world monetary value, and to the extent permitted by applicable law, no refund or compensation is owed for coins, progress, or achievements removed under this section. If you believe a decision under this section was made in error, you may request review by contacting the Service Provider at efromfb@gmail.com or through the support (contact us) section within the Application.
+These measures may be taken immediately and without prior notice, and they apply in addition to the suspension policy described under "Enforcement and Account Suspension". Coins and other in-game items have no real-world monetary value, and to the extent permitted by applicable law, no refund or compensation is owed for coins, progress, or achievements removed under this section. If you believe a decision under this section was made in error, you may request review by contacting the Service Provider at 4bargapp@gmail.com or through the support (contact us) section within the Application.
 
-If you discover a bug or exploit, please report it to the Service Provider at efromfb@gmail.com or through the support section within the Application instead of using it.
+If you discover a bug or exploit, please report it to the Service Provider at 4bargapp@gmail.com or through the support section within the Application instead of using it.
 
-The Service Provider may review reported content, request additional information where necessary, remove or restrict access to content, and take action against the responsible account where appropriate. Users affected by moderation decisions may contact the Service Provider at efromfb@gmail.com to request further review. The Service Provider will respond to appeals within a reasonable period and provide the reasons for any upheld moderation decision, subject to applicable law.
+The Service Provider may review reported content, request additional information where necessary, remove or restrict access to content, and take action against the responsible account where appropriate. Users affected by moderation decisions may contact the Service Provider at 4bargapp@gmail.com to request further review. The Service Provider will respond to appeals within a reasonable period and provide the reasons for any upheld moderation decision, subject to applicable law.
 
 By submitting User-Generated Content you grant the Service Provider a non-exclusive, worldwide, royalty-free license to use, reproduce, distribute, prepare derivative works of, display and perform the content in connection with the Application and the Service Provider's business. This license does not grant the Service Provider the right to sell or sublicense your content to third parties independently of the Application. You represent and warrant that you own or control all rights in the content you post and that use of the content does not violate these Terms or applicable law.
 
@@ -143,7 +137,7 @@ Any dispute arising out of or relating to these Terms will be brought before the
 
 If the Application is an intermediary service as defined under the Digital Services Act (Regulation (EU) 2022/2065, "DSA"), the following provisions apply in addition to the terms above.
 
-**Point of Contact:** The Service Provider maintains a single point of contact for direct communication with EU authorities and recipients of the service, reachable at efromfb@gmail.com. Where the Service Provider is established outside the European Union, a legal representative in the EU has been designated in accordance with Article 13 of the DSA.
+**Point of Contact:** The Service Provider maintains a single point of contact for direct communication with EU authorities and recipients of the service, reachable at 4bargapp@gmail.com. Where the Service Provider is established outside the European Union, a legal representative in the EU has been designated in accordance with Article 13 of the DSA.
 
 **Content Moderation and Statement of Reasons:** When the Service Provider restricts access to content, suspends or terminates an account, or otherwise limits the availability of the Application's features, a clear and specific statement of reasons will be provided to the affected user. The statement will include the nature of the restriction, the legal or contractual basis for the decision, and information on available redress mechanisms, in accordance with Article 17 of the DSA.
 
@@ -151,7 +145,7 @@ If the Application is an intermediary service as defined under the Digital Servi
 
 **Out-of-Court Dispute Settlement:** Disputes regarding content moderation decisions, including decisions to restrict content or suspend accounts, may be submitted to an out-of-court dispute settlement body certified in accordance with Article 21 of the DSA. The Service Provider will engage with such bodies in good faith. Use of out-of-court dispute settlement does not affect your right to seek judicial remedy under applicable law.
 
-**Transparency Reporting:** The Service Provider publishes periodic transparency reports covering content moderation activities, including the volume of notices received, actions taken, and automated means used, in accordance with Article 24 of the DSA. Reports are made available upon request at efromfb@gmail.com.
+**Transparency Reporting:** The Service Provider publishes periodic transparency reports covering content moderation activities, including the volume of notices received, actions taken, and automated means used, in accordance with Article 24 of the DSA. Reports are made available upon request at 4bargapp@gmail.com.
 
 These DSA provisions apply to the extent that the Application qualifies as an intermediary service under the DSA and does not replace or limit any rights or obligations under applicable consumer protection or data protection law.
 
@@ -167,13 +161,13 @@ These Terms and Conditions, together with the Privacy Policy, constitute the ent
 
 The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.
 
-Previous versions of these Terms and Conditions will be maintained and made available upon request by contacting the Service Provider at efromfb@gmail.com.
+Previous versions of these Terms and Conditions will be maintained and made available upon request by contacting the Service Provider at 4bargapp@gmail.com.
 
 These terms and conditions are effective as of 2026-06-19
 
 **Contact Us**
 
-If you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at efromfb@gmail.com.
+If you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at 4bargapp@gmail.com.
 
 * * *
 
