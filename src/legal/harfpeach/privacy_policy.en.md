@@ -1,110 +1,145 @@
 **Privacy Policy**
 
-This privacy policy applies to the Harf Peach app for mobile devices, together with any related services operated by Sep Behroozi (collectively, the "Application"). Sep Behroozi is hereby referred to as the "Service Provider".
+Effective date: 2026-11-04
 
-**Information Collection and Use**
+This privacy policy explains what information the Harf Peach (حرف‌پیچ) game and its servers handle, where that information goes, and what choices you have. Harf Peach is built and operated by Sep Behroozi ("I", "me"), based in Germany. I am the controller of your personal data under the EU General Data Protection Regulation (GDPR). You can reach me at efromfb@gmail.com.
 
-The Application collects information when you download and use it. This information may include information such as
+**Summary**
 
-*   Your device's Internet Protocol address
-*   The pages of the Application that you visit, the time and date of your visit, the time spent on those pages
-*   The time spent on the Application
-*   your mobile operating system you use
+*   You can play as a guest with no phone number or email. If you save your progress, I store your phone number or a Google account identifier.
+*   Your account, game progress, purchases and messages are stored on my server, which is located in Iran.
+*   Private chat is not end-to-end encrypted. Messages are stored on my server, including messages you deleted and media that no longer shows in the app.
+*   Other players can see your name, avatar, level, leaderboard positions and live matches.
+*   The app shows no ads, and I do not sell your data. It uses Google Firebase for crash reports, usage analytics and push notifications.
+*   You can delete your account inside the app. Some records stay after that; "Deleting your account" below lists them.
 
-**Cookies and tracking technologies**
+**Information you provide**
 
-The Application or its third-party SDKs may use cookies, SDKs, pixels, and similar technologies to support functionality, analytics, or service delivery. Where required by applicable law, the Service Provider will obtain consent before using non-essential tracking technologies.
+*   **Sign-in details.** If you link a phone number, I store it as it is, so that you can sign in again. If you link a Google account, I store only Google's account identifier for this app. I do not store your Google email, name or picture.
+*   **Profile.** Your username, display name and chosen avatar. If you upload your own photo, it is stored on my server and reviewed by me before other players can see it.
+*   **Private chat.** The text, images and voice messages you send to friends, along with who sent them and when. A voice message records only while your finger holds the microphone button.
+*   **Public chat.** The messages you post in the public chat, which all players can read.
+*   **Friends and blocks.** Your friends, friend requests, blocked accounts and invite codes.
+*   **Reports.** The reports you send about other players' messages, and reports other players send about yours.
 
-**Your Rights**
+**Information created when you play**
 
-You may request access to, correction of, or deletion of your personal data held by the Service Provider. To exercise these rights, or to withdraw consent where processing is based on consent, contact the Service Provider at efromfb@gmail.com.
+*   **Game data.** Levels and stars, found words, daily puzzle times, matches and results, private rooms, leaderboard scores, XP, avatar frames and VIP status.
+*   **Wallet history.** A permanent record of every change to your coins, gems and XP.
+*   **Purchases.** The store or payment service used, transaction ID, product, amount, platform and time. I do not receive your card or bank details.
+*   **Offline play.** Campaign levels can be played offline. The app records your actions on the device and sends them to my server, which checks them. An install ID identifies your installation of the app during this.
+*   **Online status.** Whether you are online and what you are doing (in a match, in a private room, searching for an opponent, or elsewhere in the app). Friends see only an online dot. The fuller status is visible to me in the admin panel.
 
-**Your California privacy rights (CCPA/CPRA)**
+**Technical information**
 
-If you are a California resident, you have the right to know what personal information is collected, the right to delete personal information, the right to opt out of the sale or sharing of personal information, and the right to non-discrimination for exercising these rights. To exercise your CCPA/CPRA rights, contact the Service Provider at efromfb@gmail.com.
+*   **Device credential.** A random secret stored on your device that keeps you signed in. My server stores only its hash.
+*   **Push details.** Your push token, device platform and app version, along with your notification settings.
+*   **IP address.** My server uses your IP address to deliver the service and to limit abuse, for example by limiting how many sign-in codes can be requested. It may also appear in technical server logs. To spot two accounts playing each other from one connection, my server compares a salted hash of the address rather than the address itself.
+*   **App version and device capabilities.** The app tells my server its version and which game features it supports, so that I can serve compatible content.
 
-**Artificial Intelligence**
+**App permissions**
 
-The Application uses Artificial Intelligence (AI) technologies to enhance user experience and provide certain features. The AI components may process user data to deliver personalized content, recommendations, or automated functionalities. All AI processing is performed in accordance with this privacy policy and applicable laws. If you have questions about the AI features or data processing, please contact the Service Provider.
+*   **Camera and photos.** To choose a profile picture or send an image in chat, when you choose to.
+*   **Microphone.** To record voice messages, only while you hold the button.
+*   **Notifications.** To show the notifications described below, if you allow them.
 
-The Service Provider may use the information you provide to send important information, required notices, and, where permitted by law, marketing communications.
+The app does not ask for your location or your contacts. On Android, it can read a sign-in code from an SMS sent to it using a Google Play Services feature that needs no SMS permission and cannot read your other messages.
 
-For a better experience while using the Application, the Service Provider may require you to provide certain personally identifiable information, including but not limited to phone number, username, user id. The information the Service Provider requests will be retained and used as described in this privacy policy.
+**What other players can see**
 
-**Third Party Access**
+*   **Public profile.** For registered players: display name, username, approved photo, level, levels completed, stars and online wins. Your phone number, coins, gems and VIP status are not shown there.
+*   **Matches and rooms.** Your opponent and spectators see your name, avatar and frame. Any signed-in player can watch a live match or private room lobby, and players cannot turn this off. Guests appear to other players as «مهمان».
+*   **Leaderboards.** Your name, avatar, level and score.
+*   **Friends.** Friends can see your online dot, your position on the campaign map and your daily puzzle results. They can also tell when you have been away for a while, and may be invited to call you back.
+*   **Messages.** The person you message sees your private messages. Everyone in the public chat sees your public messages, your name and your avatar.
 
-Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.
+**Who I share information with**
 
-**International Data Transfers**
+I share information only as needed to run the game:
 
-The Service Provider or its third-party service providers may transfer personal data to countries outside your country of residence, including outside the European Economic Area (EEA). Where applicable law requires safeguards for international transfers, the Service Provider will use appropriate mechanisms.
+*   **sms.ir** receives your phone number and sign-in code to send the text message.
+*   **Google Sign-In** handles sign-in if you choose Google.
+*   **Firebase Cloud Messaging (Google)** delivers push notifications and receives your push token and the notification content. By default, a chat notification says only that there is a new message. If the player receiving it chooses a more detailed preview in Settings, it can include the sender's name, the first 80 characters of the message and an image.
+*   **Firebase Crashlytics (Google)** receives crash reports with technical device and app details.
+*   **Google Analytics for Firebase** receives automatically collected usage events, such as app opens and session lengths, along with device model, OS version, an app instance ID and approximate location derived from the IP address. It may also read the device's advertising ID where available. The app shows no ads and I do not use that ID for advertising. I do not send your account ID, messages or game words to analytics.
+*   **Cafe Bazaar, Myket and Google Play** process purchases made through them. **Zibal**, a bank payment gateway, processes payments made through its page.
+*   **Cloudflare** may carry push notifications through a relay when direct delivery to Google is unavailable.
+*   **A backup storage provider** holds server backups, which are encrypted before they leave the server, so the provider cannot read them.
 
-*   Standard Contractual Clauses (SCCs) approved by the European Commission
-*   Adequacy decisions or other legally recognized transfer mechanisms
-*   Your consent, where required and legally permitted
+I may also disclose information when the law requires it, or where necessary to protect players, investigate fraud or defend legal claims.
 
-Data protection laws in other countries may differ from those in your jurisdiction. Where required by law, the Service Provider will apply appropriate safeguards and obtain any consent required for the transfer.
+Each of these services has its own privacy terms, including [Google](https://policies.google.com/privacy), [Firebase](https://firebase.google.com/support/privacy) and [Cloudflare](https://www.cloudflare.com/privacypolicy/).
 
-Please note that the Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the Privacy Policy of the third-party service providers used by the Application:
+**Notifications**
 
-*   [AdMob](https://policies.google.com/technologies/partner-sites)
-*   [Google Analytics for Firebase](https://firebase.google.com/support/privacy)
-*   [Firebase Crashlytics](https://firebase.google.com/support/privacy/)
-*   [RevenueCat](https://www.revenuecat.com/privacy)
+Notifications cover things like chat messages, friend requests, invite rewards, VIP daily coins, the daily puzzle, match invitations, players waiting for an opponent, and reminders before an inactive guest account is deleted. You can turn each type on or off in Settings › Notifications, or block notifications entirely in your phone's settings. Marketing notifications stay off unless you turn them on.
 
-The Service Provider may disclose User Provided and Automatically Collected Information:
+**Why I use your information**
 
-*   as required by law, such as to comply with a subpoena, or similar legal process;
-*   when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;
-*   with their trusted services providers who work on their behalf, do not have an independent use of the information the Service Provider discloses to them, and have agreed to adhere to the rules set forth in this privacy statement.
+Under the GDPR, I rely on these legal bases:
 
-**Opt-Out Rights**
+*   **To provide the game you asked for (contract, Art. 6(1)(b)):** accounts, sign-in, game progress, matches, chat, friends, purchases and notifications you expect from the service.
+*   **My legitimate interests (Art. 6(1)(f)):** keeping the game fair and safe, moderating content, preventing abuse, fixing crashes, understanding how the game is used, and keeping backups.
+*   **Your consent (Art. 6(1)(a)):** marketing notifications, notification permission and detailed chat previews. You can withdraw consent at any time in Settings, which does not affect anything done before.
+*   **Legal obligations (Art. 6(1)(c)):** keeping accounting and tax records, and responding to lawful requests.
 
-You can stop further collection of information from your mobile device by uninstalling the Application. Uninstalling will stop the Application from collecting data from your device, but it does not automatically delete information that has already been transmitted to the Service Provider or to third parties.
+**Moderation and fair play**
 
-To request deletion of your personal data, to withdraw consent, or to exercise any of your rights, contact the Service Provider at efromfb@gmail.com.
+I can read public chat conversations through an admin panel. This includes messages a sender has deleted and media that no longer shows in the app. I use this to review reports and keep players safe. I also review uploaded profile photos.
 
-**Data Retention Policy**
+Automatic checks verify offline play and can correct or flag results. They also flag pairs of accounts that meet unusually often or share a connection, for review. These flags do not stop a match on their own. Bans are decided by a person, and the ban rules are in the Terms and Conditions.
 
-The Service Provider retains personal data based on its necessity for the stated purposes:
+**Where your data is stored**
 
-*   User Provided Data: Retained for the duration of your use of the Application plus 12 months thereafter, unless longer retention is required by law
-*   Automatically Collected Data: Retained for up to 24 months from collection, unless longer retention is required for legal compliance
-*   Aggregated and Anonymized Data: Retained indefinitely as it no longer identifies you
-*   Data required for legal compliance: Retained as long as required by applicable law
+My server is located in Iran, so your account data, messages and game data are stored there even if you live elsewhere. Iran has no EU adequacy decision, and its data protection laws differ from those in the EU. Services such as Google and Cloudflare may process data in the United States and other countries under their own terms. Cafe Bazaar, Myket, sms.ir and Zibal operate in Iran.
 
-You may request deletion of your personal data, subject to any legal obligation to retain it. If you want the Service Provider to delete User Provided Data submitted through the Application, please contact them at efromfb@gmail.com. Please note that some User Provided Data may be required for the Application to function properly.
+**How long I keep information**
 
-**Children**
+*   **Account and game data:** until you delete your account.
+*   **Guest accounts:** deleted automatically after 90 days without opening the app.
+*   **Private chat text:** no automatic expiry. A message you delete disappears from the conversation.
+*   **Chat images and voice messages:** stop showing in the app after 48 hours and 7 days respectively, but the files may stay on the server with no automatic expiry.
+*   **Public chat messages:** the app shows recent messages only, but they stay on the server with no automatic expiry.
+*   **Offline play events:** deleted after 90 days. Batch records and fair play flags are kept.
+*   **Leaderboard scores:** deleted 7 days after a daily period, 56 days after a weekly period and 366 days after a monthly period ends.
+*   **Wallet history and purchase records:** kept with no automatic expiry, for financial integrity and the accounting periods the law requires.
+*   **Reports and bans:** kept with no automatic expiry, as evidence.
+*   **Backups:** when backups are made, remote copies are removed after about 14 days.
 
-The Application is not intended for children under 16 years of age, or such higher age as required by applicable law. The Service Provider does not knowingly solicit data from children or market the Application to them.
+**Deleting your account**
 
-Where parental or guardian consent is required under applicable law, the Application is not intended for use without that consent. The Service Provider does not knowingly collect personally identifiable information from children under 16 years of age in violation of applicable law. In the event the Service Provider discovers that a child has provided personal information, the Service Provider will immediately delete this from their servers. If you are a parent or guardian and you are aware that your child has provided the Service Provider with personal information, please contact the Service Provider (efromfb@gmail.com) so that they will be able to take the necessary actions.
+You can delete your account in the app, at the bottom of your profile page. [This guide](/harfpeach/delete_account) shows the steps. Deletion takes effect immediately and cannot be undone.
+
+These are deleted: your phone number and Google identifier (so they can be used again), device credentials, username, display name, profile photo, frame, level progress, stats, VIP, friends, friend requests, blocks, push tokens and notification settings, daily puzzle attempts and offline play events. Your coins and gems are lost.
+
+These are kept: an empty account record with no name or sign-in details, your wallet history and purchase records, messages you sent in private and public chat with their media, reports and bans, and offline play audit records. Messages you sent may stay visible to the person you sent them to.
+
+To ask me to delete your remaining chat messages or other data, email efromfb@gmail.com. I will delete what I am not required or entitled to keep. Data also remains in encrypted backups until those expire.
+
+Uninstalling the app does not delete your account.
+
+**Your rights**
+
+Under the GDPR, you can ask me for access to your personal data, correction, deletion, restriction of processing and a portable copy of it. You can also object to processing based on my legitimate interests, and withdraw any consent you have given. To exercise these rights, email efromfb@gmail.com. I may need to confirm that the account is yours.
+
+You also have the right to complain to a data protection authority, in particular in the EU country where you live or work, or in Germany where I am based.
+
+If you are a California resident, you can ask what personal information I collect and ask me to delete it, and you will not be treated differently for doing so. I do not sell your personal information.
 
 **Security**
 
-The Service Provider is concerned about safeguarding the confidentiality of your information. The Service Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider processes and maintains.
+Connections between the app and my server are encrypted with TLS, and I store sign-in secrets only as hashes. Your device credential is kept in your phone's secure storage, and the offline level data is encrypted on the device. Backups are encrypted before they leave the server. Phone numbers and chat messages are stored on the server without separate encryption, and no system is completely secure.
 
-**Data Breach Notification**
+If a data breach puts your personal data at risk, I will notify you and the authorities as the law requires.
 
-If a data breach occurs that affects your personal data, the Service Provider will notify you in accordance with applicable legal requirements, including, where required, providing information about the nature of the breach and the steps being taken to address it.
+**Children**
 
-**Changes**
+Harf Peach is for players aged 18 and over, because multiplayer matches use in-game currency as an entry. The app does not verify age. If you believe a child has given me personal data, email efromfb@gmail.com and I will delete it.
 
-The Service Provider may update this Privacy Policy from time to time. The Service Provider will notify you of material changes by posting the updated Privacy Policy with an effective date. Where required by law, the Service Provider will seek your consent to material changes before they take effect.
+**Changes to this policy**
 
-Previous versions of this Privacy Policy will be maintained and made available upon request by contacting the Service Provider at efromfb@gmail.com.
+I may update this policy as the game changes. I will post the new version here with a new effective date, and tell you in the app if a change is significant. Earlier versions are available on request.
 
-This privacy policy is effective as of 2026-09-06
+**Contact**
 
-**Your Consent**
-
-Where processing is based on consent, you provide that consent by affirmatively opting in to the relevant feature or action. You may withdraw consent at any time without affecting processing carried out before withdrawal. Processing based on other lawful bases is carried out as described above.
-
-**Contact Us**
-
-If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at efromfb@gmail.com.
-
-* * *
-
-<span>This privacy policy page was generated by</span> [App Privacy Policy Generator](https://app-privacy-policy-generator.nisrulz.com/)
+If you have any questions about this policy or your data, email efromfb@gmail.com.

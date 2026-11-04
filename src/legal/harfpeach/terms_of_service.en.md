@@ -1,147 +1,141 @@
 **Terms & Conditions**
 
-These terms and conditions apply to the Harf Peach app for mobile devices, together with any related services operated by Sep Behroozi (collectively, the "Application"). Sep Behroozi is hereby referred to as the "Service Provider".
+Effective date: 2026-11-04
 
-By downloading or using the Application, you agree to these Terms and Conditions. You should read them carefully before using the Application.
+These terms apply to the Harf Peach (حرف‌پیچ) game and its related services. Harf Peach is built and operated by Sep Behroozi ("I", "me"), based in Germany. By using the game, you agree to these terms. How I handle your data is described in the [Privacy Policy](/harfpeach/privacy_policy).
 
-**License to use the Application**
+**Summary**
 
-Subject to your compliance with these Terms, the Service Provider grants you a limited, non-exclusive, non-transferable, revocable license to install and use the Application on a mobile device for personal or internal business purposes. You may not reproduce, distribute, modify, create derivative works from, reverse engineer, decompile, or disassemble the Application, except as and only to the extent that such activity is expressly permitted by applicable law.
+*   You must be at least 18 to play.
+*   Coins and gems are in-game items with no cash value. Gems cannot be bought directly or converted back to coins, and nothing can be cashed out.
+*   Multiplayer matches use gems as an entry. The winner receives both entries, and you can lose the gems you enter.
+*   Cheating or abusing other players can get you banned. A permanent ban removes your coins and gems.
+*   If you stay a guest, you can lose your progress with your device, and an inactive guest account is deleted after 90 days.
 
-**Intellectual Property**
+**Who can play**
 
-The Service Provider retains all intellectual property rights in the Application, including its code, design, trademarks, service marks, trade names, logos, and branding (the "IP"). Nothing in these Terms grants you any license or right to use the Service Provider's trademarks, logos, or branding for any purpose. You agree not to remove, alter, or obscure any copyright, trademark, or other proprietary notices displayed in or on the Application.
+You must be at least 18 years old and legally allowed to use the game where you live. The app does not verify age, so by playing you confirm that you meet this requirement.
 
-**Termination**
+**Your account**
 
-The Service Provider may suspend your access to the Application or services if you materially breach these Terms. The Service Provider will provide you with written notice of the breach and, where the breach is capable of cure, you will have 14 days from receipt of notice to remedy the breach. If you fail to cure the breach within that period, the Service Provider may terminate your access.
+*   **Guest accounts.** The game creates a guest account on your device when you first open it. It is tied to that device, so losing or resetting the device can lose your progress. A guest account that has not opened the app for 90 days is deleted automatically.
+*   **Registered accounts.** Linking a phone number or Google account lets you restore your progress on another device. Some social features, such as friends, private chat and posting in public chat, need a registered account.
+*   **Your responsibility.** Keep your phone and sign-in details secure, because activity on your account is treated as yours. Do not sell, share or transfer accounts.
+*   **Names.** Your first choice of username and display name is free. Later changes cost coins, and the app shows the price before you confirm. Names and photos must follow the content rules below.
+*   **Deleting your account.** You can delete your account in the app at any time. This permanently ends your access to its progress, coins, gems and VIP, with no refund. See the [deletion guide](/harfpeach/delete_account).
 
-The Service Provider may suspend or terminate your access immediately without notice if you violate applicable law, infringe intellectual property rights, or engage in activity that could cause harm to other users or the Service Provider.
+**Using the app**
 
-Upon termination, your right to use the Application will end and you must delete all copies from your devices.
+I give you a personal, non-transferable, revocable right to install and use the game for non-commercial purposes. You may not copy, sell, modify or reverse engineer the game, except where the law allows this regardless of these terms. The game's code, design, name, artwork and word content remain mine or my licensors'.
 
-By accessing and using this Application, you represent that you are legally permitted to use it in your jurisdiction. You must be at least 16 years of age (the age of digital consent in your jurisdiction) to use the Application. If you are below 16, a parent or legal guardian must review and accept these Terms on your behalf.
+**How the game decides results**
 
-Unauthorized copying, modification of the Application, any part of the Application, or the Service Provider's trademarks is strictly prohibited. Any attempts to extract the source code of the Application, translate the Application into other languages, or create derivative versions are not permitted. All trademarks, copyrights, database rights, and other intellectual property rights related to the Application remain the property of the Service Provider.
+My server is the final authority on puzzles, guesses, results, rewards and balances. Campaign levels can be played offline on your device, and your progress is then sent to my server, which checks it. If they differ, the server's numbers apply, which can change progress, stars, coins or XP you saw offline. Some actions, including multiplayer, the daily puzzle, the store and social features, need an internet connection, and your mobile operator's charges are your responsibility.
 
-**User-Generated Content and Acceptable Use**
+**Coins and gems**
 
-If this Application allows users to post, share, or upload content, you agree not to post content that:
+*   **Coins** are earned by playing or bought with real money. They are spent on things like hints, gems, past daily puzzles, name changes and avatar frames.
+*   **Gems (الماس)** are obtained by converting coins, by winning multiplayer matches, or through one-time gifts in the game. They are used for multiplayer entries. Gems cannot be bought directly with real money.
+*   **One way only.** Coins can be converted to gems, but gems can never be converted back to coins.
+*   **No cash value.** Coins, gems, XP, VIP and frames are a limited licence to use in-game items. You do not own them, and they have no monetary value. They cannot be cashed out, exchanged for real-world prizes, or transferred to another account, including by selling them or losing to another player on purpose.
+*   **Adjustments.** I may correct balances that are wrong because of an error, a refund, offline play checks or a breach of these terms.
 
-*   Is illegal or violates third-party intellectual property rights (copyright, trademark, patents)
-*   Is abusive, threatening, harassing, defamatory, or hate speech
-*   Contains discrimination or incitement to violence or illegal activity
-*   Is spam, phishing, or contains malware
-*   Violates the privacy or personal data rights of others
-*   Is misleading, false, or deceptive
-*   Contains explicit violence or sexual content (unless age-gated appropriately)
+**Multiplayer matches**
 
-The Service Provider reserves the right to:
+Multiplayer unlocks at a certain player level, and matches are head-to-head word races with an entry in gems. Both players enter the same number of gems and get the same puzzle. The rules are:
 
-*   Remove or disable access to content that violates these guidelines
-*   Suspend or terminate accounts of users who repeatedly violate these guidelines
-*   Cooperate with law enforcement if illegal content is reported
-*   Moderate, filter, or hide content that violates these Terms, applicable law, or the guidelines set out above
+*   **Winning.** The player who completes all the required words first wins, or when time runs out, the player with more required words wins. The winner receives both entries. I take no fee.
+*   **Ties.** If both players have the same count when time runs out, both get their entry back.
+*   **Disconnecting.** The clock keeps running if you lose your connection. If you do not return within the short reconnect window, you forfeit the match, and your opponent wins.
+*   **Prizes.** Matches never award coins, money or real-world prizes. Gems you enter and lose are not returned.
+*   **Interruptions.** If a match cannot finish because of a server problem, entries are refunded.
 
-Content submitted through the Application may be visible to other users or to the public, depending on how the Application functions.
+**Purchases and VIP**
 
-If you believe content violates these Terms, infringes your rights, or is unlawful, you may report it to the Service Provider at efromfb@gmail.com. The report should include enough information for the Service Provider to identify the content, evaluate the complaint, and contact you if follow-up is required.
+*   **Paying.** You buy coins and VIP through Cafe Bazaar, Myket, Google Play or the Zibal bank payment page, depending on your version of the app. The app shows the price and who charges it before you confirm. That service's own terms also apply to your payment.
+*   **Delivery.** Purchased items are added to your account right after payment is confirmed.
+*   **VIP.** VIP is a package for a fixed number of days, not a subscription, and does not renew automatically. Buying more adds days to your current VIP. Perks can include daily coins, a crown frame and dark mode, as shown in the store. A gifted VIP lasts 3 days and gives the perks of its tier, and each account can receive one only once.
+*   **Refunds.** Refunds go through the service that charged you. If a purchase is refunded or reversed, I may remove the coins, up to your balance, or shorten your VIP.
+*   **Your statutory rights.** If you are a consumer in the EU, you may have a 14-day right to withdraw from a purchase. For digital content delivered immediately, this right can end once delivery starts if you agreed to that at purchase. To use it, email efromfb@gmail.com. Nothing in these terms limits rights that the law does not allow to be limited.
 
-Where the Application provides such features, you may also report content, block other users, or mute notifications directly through the Application's interface. The Service Provider will review in-app reports with the same standards described in these Terms.
+**Fair play**
 
-The Service Provider may review reported content, request additional information where necessary, remove or restrict access to content, and take action against the responsible account where appropriate. Users affected by moderation decisions may contact the Service Provider at efromfb@gmail.com to request further review. The Service Provider will respond to appeals within a reasonable period and provide the reasons for any upheld moderation decision, subject to applicable law.
+You must not:
 
-By submitting User-Generated Content you grant the Service Provider a non-exclusive, worldwide, royalty-free license to use, reproduce, distribute, prepare derivative works of, display and perform the content in connection with the Application and the Service Provider's business. This license does not grant the Service Provider the right to sell or sublicense your content to third parties independently of the Application. You represent and warrant that you own or control all rights in the content you post and that use of the content does not violate these Terms or applicable law.
+*   Use bots, scripts, modified apps, emulators used for automation, or any tool that plays or guesses for you.
+*   Tamper with the app, its traffic, its stored data or your offline progress, or exploit bugs instead of reporting them.
+*   Run several accounts to gain an advantage or collect gifts and rewards more than once.
+*   Fix matches or lose on purpose, including to move gems between accounts.
+*   Buy, sell or trade accounts, coins or gems, or commit payment fraud, including false refund claims.
 
-Your content may include personal data. Processing of personal data related to User-Generated Content is governed by the Privacy Policy. Do not post personal data of others without their consent.
+Automatic checks may flag suspicious activity for review. Playing often with friends or sharing a connection is not a violation by itself.
 
-The Service Provider is dedicated to ensuring that the Application is as beneficial and efficient as possible. As such, they reserve the right to modify the Application or charge for their services at any time and for any reason. The Service Provider assures you that any charges for the Application or its services will be clearly communicated to you.
+**Chat, photos and other content**
 
-The Application stores and processes personal data that you have provided to the Service Provider in order to provide the Service. It is your responsibility to maintain the security of your mobile device and access to the Application.
+You are responsible for what you post, including messages, images, voice messages, names and profile photos. Do not post anything that:
 
-The Service Provider strongly advises against jailbreaking or rooting your mobile device, which involves removing software restrictions and limitations imposed by the official operating system of your mobile device. Such actions could expose your mobile device to malware, viruses, malicious programs, compromise your mobile device's security features, and may result in the Application not functioning correctly or at all.
+*   Is illegal or infringes someone else's rights.
+*   Is abusive, threatening, harassing or hateful, or that incites violence.
+*   Is sexual or graphically violent, or that involves children in any harmful way.
+*   Is spam, a scam or malware.
+*   Shares another person's private information without their consent.
 
-Third Party Services
+You keep ownership of your content. You give me a non-exclusive, worldwide, royalty-free licence to store, display and transmit it as needed to run the game, moderate it and meet legal obligations. Deleting your account does not remove messages you have already sent; the Privacy Policy explains what stays.
 
-*   [AdMob](https://developers.google.com/admob/terms)
-*   [Google Analytics for Firebase](https://www.google.com/analytics/terms/)
-*   [Firebase Crashlytics](https://firebase.google.com/terms/crashlytics)
-*   [RevenueCat](https://www.revenuecat.com/terms)
+Private chat is not end-to-end encrypted. I can read conversations to review reports and keep the game safe.
 
-Please be aware that the Service Provider does not assume responsibility for certain aspects. Some functions of the Application require an active internet connection, which can be Wi-Fi or provided by your mobile network provider. The Service Provider cannot be held responsible if the Application does not function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance.
+**Reporting and moderation**
 
-If you are using the application outside of a Wi-Fi area, please be aware that your mobile network provider's agreement terms still apply. Consequently, you may incur charges from your mobile provider for data usage during the connection to the application, or other third-party charges. By using the application, you accept responsibility for any such charges, including roaming data charges if you use the application outside of your home territory (i.e., region or country) without disabling data roaming. If you are not the bill payer for the device on which you are using the application, they assume that you have obtained permission from the bill payer.
+You can report a chat message by long-pressing it, and block another player from their profile or the chat menu. For anything else, including illegal content, email efromfb@gmail.com with enough detail for me to find it.
 
-Similarly, the Service Provider cannot always assume responsibility for your usage of the application. For instance, it is your responsibility to ensure that your device remains charged. If your device runs out of battery and you are unable to access the Service, the Service Provider cannot be held responsible.
+I review reports and may remove content, reject a photo, or ban an account. Bans take effect immediately and follow these steps:
 
-Nothing in these Terms shall limit any rights you have under applicable consumer protection laws that cannot be lawfully excluded.
+*   **First ban:** 24 hours.
+*   **Second ban:** 3 days.
+*   **Third ban:** permanent.
 
-**Limitation of Liability**
+A permanent ban sets your coins and gems to zero, removes your profile photo and clears your friends list, with no refund unless the law requires one. The banned screen shows the reason, and you can contest a decision or a removed message by emailing efromfb@gmail.com. I will review it and tell you the outcome and the reasons.
 
-To the fullest extent permitted by law, the Service Provider shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to lost profits, data loss, or business interruption, even if advised of the possibility of such damages.
+A match already under way when a ban happens is still settled under the match rules.
 
-However, the Service Provider retains full liability for:
+**Ending your access**
 
-*   Death or personal injury caused by negligence
-*   Fraud or fraudulent misrepresentation
-*   Any other liability that cannot be excluded or limited under applicable law
+You can stop playing at any time. I may suspend or end your access as described above, or if the law requires me to. I may also change, suspend or stop offering the game or any feature. If I shut down the whole game, I will give reasonable notice in the app where I can. If I stop the game while you hold paid items, your statutory rights apply.
 
-To the fullest extent permitted by law, the total liability of the Service Provider for any claim shall not exceed the amount paid by you to the Service Provider for the Application in the 12 months preceding the claim, or the minimum amount that must be paid under applicable law, whichever is greater. If the Application is provided free of charge, this means the Service Provider's liability is limited to the minimum amount permitted by applicable law.
+**Updates and availability**
 
-The Service Provider accepts no liability for any loss, direct or indirect, that you experience as a result of relying entirely on third-party information provided through this Application, or for inaccuracies in content provided by third parties.
+The game needs an internet connection for many features, and I do not promise it will always be available or free of errors. Some older versions may stop working, and you may have to update the app to keep playing. The game may not work correctly on a jailbroken or rooted device, which is also less secure. Some third-party services may not be reachable in every country.
 
-**Indemnification**
+**Third-party services**
 
-To the fullest extent permitted by law, you agree to indemnify and hold harmless the Service Provider, its affiliates, officers, directors, employees and agents from and against any claims, liabilities, damages, losses and expenses, including reasonable legal fees, arising out of or directly related to your breach of these Terms or your intentional misuse of the Application, including User-Generated Content you submit in violation of these Terms.
+The game depends on services from other companies, including Google (Firebase and Sign-In), Cafe Bazaar, Myket, Zibal and sms.ir. I am not responsible for those services, and using them may be subject to their own terms. Google, Cafe Bazaar and Myket do not sponsor or organize the game's matches.
 
-This indemnification does not apply to claims arising from the Service Provider's own negligence, breach of these Terms, or violation of applicable law. In jurisdictions where consumer indemnification is restricted by law, this clause shall be limited to the maximum extent permitted.
+**Liability**
 
-The Application incorporates Artificial Intelligence (AI) technologies to provide certain features or services. By using the Application, you acknowledge and agree that AI may be used to process data and deliver functionalities. The Service Provider ensures that all AI usage complies with applicable laws and is designed to benefit the user experience.
+I am fully liable for intent and gross negligence, for injury to life, body or health, under the German Product Liability Act (Produkthaftungsgesetz), and wherever liability cannot be limited by law.
 
-The Service Provider may wish to update the application at some point. The application is currently available as per the requirements for the operating system (and for any additional systems they decide to extend the availability of the application to) may change, and you will need to download the updates if you want to continue using the application. The Service Provider does not guarantee that it will always update the application so that it is relevant to you and/or compatible with the particular operating system version installed on your device. You should accept updates when offered; if you choose not to, the Service Provider may cease to support earlier versions and the Application may not function properly. The Service Provider may also wish to cease providing the application and may terminate its use at any time without providing termination notice to you. Unless they inform you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must cease using the application, and (if necessary) delete it from your device.
+For slight negligence, I am liable only for breach of an essential obligation, meaning one that makes proper use of the game possible and that you can normally rely on. In that case, liability is limited to the foreseeable damage typical for this kind of service. Otherwise, I am not liable for slight negligence.
 
-**Governing Law and Jurisdiction**
+**Your responsibility for misuse**
 
-These Terms and Conditions are governed by the laws of the jurisdiction in which the Service Provider is established, excluding conflict of law rules, except to the extent mandatory consumer protection laws provide otherwise.
+If you culpably break these terms and that causes a third party to bring a claim against me, you must compensate me for the resulting reasonable costs, including legal costs. This does not apply if you are not at fault.
 
-Any dispute arising out of or relating to these Terms will be brought before the courts that have jurisdiction under applicable law. Nothing in this clause limits any rights you may have to bring a claim in a court that is competent under mandatory law.
+**Law and disputes**
 
-**DSA Compliance (Digital Services Act)**
+These terms are governed by German law, excluding its conflict of laws rules. If you are a consumer, you also keep the protection of mandatory laws in the country where you live. You may bring a claim in any court that has jurisdiction under the law. I do not take part in dispute resolution proceedings before a consumer arbitration board and am not obliged to.
 
-If the Application is an intermediary service as defined under the Digital Services Act (Regulation (EU) 2022/2065, "DSA"), the following provisions apply in addition to the terms above.
+**Digital Services Act**
 
-Point of Contact: The Service Provider maintains a single point of contact for direct communication with EU authorities and recipients of the service, reachable at efromfb@gmail.com. Where the Service Provider is established outside the European Union, a legal representative in the EU has been designated in accordance with Article 13 of the DSA.
+If you are in the EU, the Digital Services Act gives you certain rights. My single point of contact for you and for EU authorities is efromfb@gmail.com, and you can write in Persian, English or German. You can report illegal content there as described above. When I restrict content or an account, I will give you the reasons and tell you how to contest the decision. You can also go to court.
 
-Content Moderation and Statement of Reasons: When the Service Provider restricts access to content, suspends or terminates an account, or otherwise limits the availability of the Application's features, a clear and specific statement of reasons will be provided to the affected user. The statement will include the nature of the restriction, the legal or contractual basis for the decision, and information on available redress mechanisms, in accordance with Article 17 of the DSA.
+**Changes to these terms**
 
-Notice and Action: Users and third parties may submit notices of allegedly illegal content through the contact details provided in these Terms. The Service Provider will process notices promptly, diligently, and without automated decision-making where the circumstances require human review. Notices will be acknowledged electronically and a decision communicated without undue delay, in accordance with Article 16 of the DSA.
+I may update these terms as the game changes. I will post the new version here with a new effective date, and tell you in the app before a significant change takes effect. If you do not agree to a change, you can stop playing and delete your account.
 
-Out-of-Court Dispute Settlement: Disputes regarding content moderation decisions, including decisions to restrict content or suspend accounts, may be submitted to an out-of-court dispute settlement body certified in accordance with Article 21 of the DSA. The Service Provider will engage with such bodies in good faith. Use of out-of-court dispute settlement does not affect your right to seek judicial remedy under applicable law.
+**Other terms**
 
-Transparency Reporting: The Service Provider publishes periodic transparency reports covering content moderation activities, including the volume of notices received, actions taken, and automated means used, in accordance with Article 24 of the DSA. Reports are made available upon request at efromfb@gmail.com.
+If part of these terms is found invalid, the rest stays in effect. These terms and the Privacy Policy are the whole agreement between us about the game.
 
-These DSA provisions apply to the extent that the Application qualifies as an intermediary service under the DSA and does not replace or limit any rights or obligations under applicable consumer protection or data protection law.
+**Contact**
 
-**Severability**
-
-If any provision of these Terms and Conditions is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such provision shall be modified to the minimum extent necessary to make it valid and enforceable, and the remaining provisions of these Terms shall remain in full force and effect.
-
-**Entire Agreement**
-
-These Terms and Conditions, together with the Privacy Policy, constitute the entire agreement between you and the Service Provider concerning your use of the Application, superseding any prior agreements or understandings.
-
-**Changes to These Terms and Conditions**
-
-The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.
-
-Previous versions of these Terms and Conditions will be maintained and made available upon request by contacting the Service Provider at efromfb@gmail.com.
-
-These terms and conditions are effective as of 2026-09-06
-
-**Contact Us**
-
-If you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at efromfb@gmail.com.
-
-* * *
-
-<span>This Terms & Conditions page was generated by</span> [App Privacy Policy Generator](https://app-privacy-policy-generator.nisrulz.com/)
+If you have any questions about these terms, email efromfb@gmail.com.
