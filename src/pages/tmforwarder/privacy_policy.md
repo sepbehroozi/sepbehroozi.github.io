@@ -6,68 +6,111 @@ description: Privacy policy for the TM Forwarder mobile application.
 
 **Privacy Policy**
 
-Sep Behroozi built the TM Forwarder app as a Free app. This SERVICE is provided by Sep Behroozi at no cost and is intended for use as is.
+Effective date: 2026-11-04
 
-This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
+This privacy policy explains what information the TM Forwarder Android app (the "app") handles, where that information goes, and what choices you have. TM Forwarder is built and operated by Sep Behroozi ("I", "me").
 
-If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
+TM Forwarder is an independent, unofficial Telegram client. It is not affiliated with, endorsed by, or operated by Telegram.
 
-The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which are accessible at TM Forwarder unless otherwise defined in this Privacy Policy.
+**Summary**
 
-**Information Collection and Use**
+*   I do not run my own servers for TM Forwarder. Your messages, chats and forwarding rules stay on your device and with Telegram.
+*   The app signs in to your Telegram account so it can read messages in the chats you choose and send them to the chats you choose.
+*   Your Telegram username is sent to RevenueCat, the service that manages Pro subscriptions, so the app can tell whether you have Pro.
+*   The app uses Google Firebase for usage analytics, crash reports, performance monitoring, push notifications and remote configuration. Message text, chat names, chat IDs, phone numbers, login codes and passwords are never sent to analytics.
+*   The app does not show ads and does not use the Android advertising ID.
 
-For a better experience, while using our Service, I may require you to provide us with certain personally identifiable information, including but not limited to Telegram usernames. The information that I request will be retained on your device and is not collected by me in any way.
+**Your Telegram account**
 
-The app does use third-party services that may collect information used to identify you.
+To work, the app signs in to your Telegram account using TDLib, Telegram's official client library. When you sign in, your phone number, the login code and, if you use one, your two-step verification password are sent directly to Telegram's servers. I never receive them.
 
-Link to the privacy policy of third-party service providers used by the app
+Once you are signed in, the app acts as a Telegram client on your behalf. It receives updates from your Telegram account, reads new messages in the source chats of your forwarding rules, applies your rules (for example keyword filters, text clean-up, custom text, duplicate detection and scheduling), and sends the result to your destination chats from your account. Like any Telegram app, it keeps a local copy of Telegram data, such as your chat list, messages, profile photos and login session, in an encrypted database on your device.
 
-*   [Google Play Services](https://www.google.com/policies/privacy/)
-*   [Google Analytics for Firebase](https://firebase.google.com/policies/analytics)
-*   [Firebase Crashlytics](https://firebase.google.com/support/privacy/)
+Your use of Telegram itself is covered by [Telegram's Privacy Policy](https://telegram.org/privacy).
+
+**Information stored on your device**
+
+The app stores the following on your device. It is not sent to me.
+
+*   **Forwarding rules and settings.**
+*   **Forwarding history** for the statistics screen: for each processed message, the time, the rule, the source and destination chat IDs, the content type (for example text or photo) and whether it was filtered out. History is kept for 7 days on the free tier, or for the period you choose on Pro (up to 2 years), and is then deleted automatically.
+*   **Scheduled messages.** Messages waiting to be sent by a scheduled rule, including a short text preview, are kept until they are sent or the queue is cleared.
+*   **Duplicate detection data.** To skip messages you have already forwarded, the app keeps fingerprints of forwarded messages. Message text is stored only as a one-way SHA-256 hash, not as readable text.
+*   **Notification center.** Notifications I send about the app (see "Push notifications" below) are kept in the in-app notification center.
+*   **Diagnostic log.** If you turn on debug logging, the app writes technical events (such as the service starting or stopping, errors, and chat and message IDs) to a log file. The log is designed not to include message text. It never leaves your device unless you open or share it yourself from the About screen, and you can clear it there at any time.
+
+**Device backups**
+
+Depending on your Android backup settings, Android may include the app's data, including the local Telegram data described above, in your device backup to your Google account. These backups are handled by Google under your Google account settings. You can turn off backup in your device settings.
+
+**Information sent to third-party services**
+
+The app uses the following third-party services. Each one receives only what is described here, and handles it under its own privacy policy.
+
+*   **RevenueCat** manages Pro subscriptions. When you sign in to Telegram in the app, your Telegram username (if you have one) is sent to RevenueCat and used as your RevenueCat user ID. This happens whether or not you buy Pro. RevenueCat also receives your Google Play purchase and subscription history for the app, an app-generated identifier, and basic device information such as device model, operating system version, app version, language and country. This is used to check whether you have Pro and to restore your subscription when you reinstall the app or sign in on another device. Signing out of Telegram in the app also signs you out of RevenueCat on that device, but data already sent stays with RevenueCat until it is deleted (see "Keeping and deleting your information" below).
+*   **Google Play Billing** processes payments for Pro. I never receive your payment card or other payment details.
+*   **Google Analytics for Firebase** records how the app is used, so I can improve it. The app logs these events: paywall views and where they were opened from, purchase started, completed, cancelled or failed, restore purchases, hitting a free-tier limit, creating a rule (with yes/no flags for which Pro features it uses and how many), and the steps of the sign-in flow (phone, code, password, success or error, without the values you entered). It also records whether you have Pro. Firebase automatically collects an app instance ID, device model, operating system version, app version, language, approximate location (country or region) derived from your IP address, and session times. The advertising ID is not collected.
+*   **Firebase Crashlytics** receives crash and error reports. A report includes the error and stack trace, device model, operating system version, app version, device state at the time (such as free memory and disk space), and a Crashlytics installation ID.
+*   **Firebase Performance Monitoring** measures app start time, screen rendering and the timing of network requests, together with device model, operating system version, app version and country.
+*   **Firebase Cloud Messaging** delivers push notifications. The app registers a push token and subscribes to the "App Updates" and "Promotional" notification topics according to your notification settings.
+*   **Firebase Remote Config** tells the app whether an update is required. It receives an app instance ID, the app version and your device's language and country.
+*   **Google Play services**, including Google Play In-App Updates and In-App Review, are used to offer app updates and ask for a rating.
+*   **Telegram** receives everything a Telegram client sends: your sign-in details, the messages the app forwards on your behalf, and your device model, system language and app version.
+
+Links to the privacy policies of these services:
+
 *   [RevenueCat](https://www.revenuecat.com/privacy)
+*   [Google Play Services and Google Play Billing](https://policies.google.com/privacy)
+*   [Google Analytics for Firebase](https://firebase.google.com/policies/analytics)
+*   [Firebase Crashlytics, Performance Monitoring, Cloud Messaging and Remote Config](https://firebase.google.com/support/privacy/)
+*   [Telegram](https://telegram.org/privacy)
 
-**Log Data**
+**Push notifications**
 
-I want to inform you that whenever you use my Service, in a case of an error in the app I collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing my Service, the time and date of your use of the Service, and other statistics.
+The app can show notifications about app updates and promotions. Promotional notifications are off unless you turn them on. You can turn each type on or off in the app's notification settings, and you can turn off all of the app's notifications in Android settings. The app also shows a notification while forwarding is running in the background; Android requires this.
 
-**Cookies**
+**How I use information**
 
-Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory.
+I use the information described above only to:
 
-This Service does not use these “cookies” explicitly. However, the app may use third-party code and libraries that use “cookies” to collect information and improve their services. You have the option to either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies, you may not be able to use some portions of this Service.
+*   provide the app's features and Pro subscriptions;
+*   fix crashes and improve performance and reliability;
+*   understand, in aggregate, how the app is used, so I can improve it;
+*   send you notifications you have allowed.
 
-**Service Providers**
+I do not sell your information or use it for advertising.
 
-I may employ third-party companies and individuals due to the following reasons:
+**Sharing**
 
-*   To facilitate our Service;
-*   To provide the Service on our behalf;
-*   To perform Service-related services; or
-*   To assist us in analyzing how our Service is used.
+Apart from the services listed above, I do not share your information with anyone, except where required by law, such as to comply with a subpoena or similar legal process, or when I believe in good faith that disclosure is needed to protect my rights, your safety or the safety of others, or to investigate fraud.
 
-I want to inform users of this Service that these third parties have access to their Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.
+**International transfers**
+
+RevenueCat, Google and Telegram may process your information in countries other than your own, including the United States. Where the law requires it, these providers use recognized safeguards such as the European Commission's Standard Contractual Clauses.
+
+**Keeping and deleting your information**
+
+*   **Data on your device.** Signing out of Telegram in the app deletes your forwarding rules and forwarding history. Uninstalling the app, or clearing its storage in Android settings, deletes all of the app's data from your device.
+*   **Telegram data.** Messages you have forwarded stay in your Telegram chats. Your Telegram account and its data are managed by Telegram. You can delete them from within Telegram.
+*   **RevenueCat data.** Your RevenueCat record (Telegram username and subscription history) is kept as long as it is needed to manage your subscription. To have it deleted, email me at the address below. If you do, the app may not be able to restore a past purchase automatically. Google Play keeps its own record of your purchases.
+*   **Firebase data.** Analytics, crash and performance data is kept according to Google's retention settings for Firebase, and then deleted automatically.
+
+**Your rights**
+
+Depending on where you live (for example in the European Economic Area, the United Kingdom or California), you may have the right to access, correct or delete your personal data, to object to or restrict its processing, and to data portability. To use these rights, email me at the address below. Most of the app's data is stored only on your device, and you can delete it yourself as described above. I will not treat you differently for using these rights.
 
 **Security**
 
-I value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and I cannot guarantee its absolute security.
+Telegram data on your device is stored in an encrypted database inside the app's private storage, and the app talks to Telegram, RevenueCat and Google over encrypted connections. No method of transmission or storage is 100% secure, though, and I cannot guarantee absolute security. Keep your phone secure and do not root it. See the [Terms of Service](/tmforwarder/terms_of_service).
 
-**Links to Other Sites**
+**Children's privacy**
 
-This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by me. Therefore, I strongly advise you to review the Privacy Policy of these websites. I have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+The app is not intended for children under 13, or under the minimum age required by the law where you live, and you must be old enough to use Telegram. I do not knowingly collect information from children. If you believe a child has used the app and their Telegram username has been sent to RevenueCat, email me and I will have it deleted.
 
-**Children’s Privacy**
+**Changes to this privacy policy**
 
-These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13 years of age. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do the necessary actions.
+I may update this privacy policy from time to time. Changes are posted on this page with a new effective date. Please check this page from time to time.
 
-**Changes to This Privacy Policy**
+**Contact**
 
-I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
-
-This policy is effective as of 2023-04-01
-
-**Contact Us**
-
-If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at efromfb@gmail.com.
-
-This privacy policy page was created at [privacypolicytemplate.net](https://privacypolicytemplate.net) and modified/generated by [App Privacy Policy Generator](https://app-privacy-policy-generator.nisrulz.com/)
+If you have any questions about this privacy policy, contact me at efromfb@gmail.com.
