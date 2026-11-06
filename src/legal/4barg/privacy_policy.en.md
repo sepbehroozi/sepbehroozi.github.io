@@ -15,6 +15,10 @@ The Application collects information when you download and use it. This informat
 
 To protect the integrity of the game and other users, the Service Provider processes gameplay and account information — such as game results, coin transactions and transfers between accounts, user ID, device ID, IP address, and reports submitted by other users — to detect and investigate cheating, hacks, exploits, and other abuse of the Application. This may involve review by the Application's moderators or administrators as well as automated detection systems. Where abuse is confirmed, the Service Provider may remove coins, games, experience, or achievements from the account, or suspend or permanently ban it, as described in the Terms & Conditions. Information related to a confirmed violation may be retained for as long as necessary to enforce a ban and prevent repeat abuse, even after other account data has been deleted. If you believe a decision was made in error, contact the Service Provider at 4bargapp@gmail.com or through the support section within the Application.
 
+**Chat Messages**
+
+Private chats between users cannot be read by the Application's administrators or moderators. Administrators and moderators can only read messages in public chats and messages that have been reported as violations, and they do so solely to review the report and decide whether to take action on it under the Terms & Conditions.
+
 **Cookies and tracking technologies**
 
 The Application or its third-party SDKs may use cookies, SDKs, pixels, and similar technologies to support functionality, analytics, or service delivery. Where required by applicable law, the Service Provider will obtain consent before using non-essential tracking technologies.
@@ -67,7 +71,7 @@ To request deletion of your personal data, to withdraw consent, or to exercise a
 
 The Service Provider retains personal data based on its necessity for the stated purposes:
 
-*   User Provided Data: Retained for the duration of your use of the Application plus 12 months thereafter, unless longer retention is required by law
+*   User Provided Data (including your mobile phone number and email address): Retained for the duration of your use of the Application plus 12 months thereafter, unless longer retention is required by law
 *   Automatically Collected Data: Retained for up to 24 months from collection, unless longer retention is required for legal compliance
 *   Aggregated and Anonymized Data: Retained indefinitely as it no longer identifies you
 *   Data required for legal compliance: Retained as long as required by applicable law
