@@ -72,7 +72,7 @@ To request deletion of your personal data, to withdraw consent, or to exercise a
 The Service Provider retains personal data based on its necessity for the stated purposes:
 
 *   User Provided Data (including your mobile phone number and email address): Retained for the duration of your use of the Application plus 12 months thereafter, unless longer retention is required by law
-*   Automatically Collected Data: Retained for up to 24 months from collection, unless longer retention is required for legal compliance
+*   Automatically Collected Data (including your mobile phone number and email address): Retained for up to 24 months from collection, unless longer retention is required for legal compliance
 *   Aggregated and Anonymized Data: Retained indefinitely as it no longer identifies you
 *   Data required for legal compliance: Retained as long as required by applicable law
 
